@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -17,6 +16,7 @@ function App() {
       <Projects />
       <Certifications />
       <Skills />
+      <Analytics />
     </div>
   )
 }
