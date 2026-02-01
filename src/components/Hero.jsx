@@ -10,7 +10,7 @@ const Hero = () => {
           </h1>
           <h2 className="hero-subtitle">Estudante de Ciência da Computação.</h2>
           <p className="hero-description">
-            Atualmente no 4º semestre na Universidade Federal do Ceará (UFC). Apaixonado por desenvolvimento, programação e tecnologia. Buscando oportunidades para crescer e contribuir com projetos reais. 
+            Atualmente no 5º semestre na Universidade Federal do Ceará (UFC). Apaixonado por desenvolvimento, programação e tecnologia. Buscando oportunidades para crescer e contribuir com projetos reais. 
           </p>
           <div className="hero-buttons">
             <a href="#projetos" className="btn btn-primary">Ver Projetos</a>

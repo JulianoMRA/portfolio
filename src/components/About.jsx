@@ -8,7 +8,7 @@ const About = () => {
         <div className="about-content">
           <p className="about-text">
             <strong>Bacharelando em Ciência da Computação</strong> pela Universidade Federal do Ceará (UFC), 
-            atualmente no 4º semestre. Aprovado via SISU, desenvolvo habilidades em raciocínio lógico, 
+            atualmente no 5º semestre. Aprovado via SISU, desenvolvo habilidades em raciocínio lógico, 
             programação, algoritmos e desenvolvimento.
           </p>
           
