@@ -1,7 +1,7 @@
 # Portfólio — Juliano M. R. Alencar
 
 <p align="center">
-  <a href="portfolio-one-lake-ao6gfuy4lv.vercel.app" target="_blank">🌐 Demo ao vivo</a> •
+  <a href="https://portfolio-juliano-melo-rodrigues-alencars-projects.vercel.app/" target="_blank">🌐 Demo ao vivo</a> •
   <a href="https://linkedin.com/in/julianomra">LinkedIn</a> •
   <a href="https://github.com/JulianoMRA">GitHub</a>
 </p>
