@@ -47,6 +47,23 @@
   color: white;
 }
 
+.skill-category {
+  margin-bottom: 32px;
+}
+
+.skill-category:last-child {
+  margin-bottom: 0;
+}
+
+.category-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border-color);
+}
+
 .skills-footer {
   text-align: center;
   color: var(--text-light);
@@ -58,24 +75,24 @@
   .skills {
     padding: 3rem 0 3rem;
   }
-  
+
   .section-title-skills {
     font-size: 2rem;
   }
-  
+
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1rem;
   }
-  
+
   .skill-card {
     padding: 1.5rem 0.75rem;
   }
-  
+
   .skill-icon {
     font-size: 2.5rem;
   }
-  
+
   .skill-name {
     font-size: 1rem;
   }

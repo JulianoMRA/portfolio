@@ -1,44 +1,84 @@
 # Portfólio — Juliano M. R. Alencar
 
-Site pessoal desenvolvido em React + Vite, inspirado em um layout clean e profissional, focado em apresentar perfil, projetos e certificações, com dark mode e deploy contínuo via Vercel.
+<p align="center">
+  <a href="portfolio-one-lake-ao6gfuy4lv.vercel.app" target="_blank">🌐 Demo ao vivo</a> •
+  <a href="https://linkedin.com/in/julianomra">LinkedIn</a> •
+  <a href="https://github.com/JulianoMRA">GitHub</a>
+</p>
 
-## Features
-- Hero com apresentação, links e botão de baixar currículo (PDF)
-- Foto de perfil com moldura circular
-- Seções: Sobre, Projetos, Certificações e Habilidades
-- Projetos com galeria de imagens e modal de visualização
-- Suporte a vídeo YouTube embutido por projeto
-- Habilidades com ícones profissionais (react-icons)
-- Certificações com logo da instituição e link para o certificado
-- Dark mode com persistência em `localStorage`
-- Responsivo e leve (Vite + ESBuild)
+Site pessoal desenvolvido em **React + Vite**, com design moderno, suporte a **dark mode**, **internacionalização PT/EN** e deploy contínuo via Vercel.
 
-## Stack
-- React 18
-- Vite 7
-- react-icons
-- CSS modular por componente
+---
 
-## Estrutura
+## ✨ Features
+
+- **Hero** com apresentação, links sociais e botão de download do currículo
+- **Seção Sobre** com resumo profissional
+- **Experiência** em timeline visual (PET Computação, RSI, Ceos Jr.)
+- **Projetos** com galeria de imagens, modal e vídeos do YouTube
+- **Certificações** com logos institucionais
+- **Habilidades** organizadas por categoria (Linguagens, Frontend, Backend, etc.)
+- **Footer** com contatos e idiomas
+- **Dark Mode** com persistência em `localStorage`
+- **Internacionalização** PT/EN com toggle no header
+- **Responsivo** e otimizado para performance
+
+---
+
+## 🛠️ Stack
+
+| Tecnologia | Uso |
+|------------|-----|
+| React 18 | Framework UI |
+| Vite 7 | Build tool |
+| react-icons | Ícones profissionais |
+| CSS Modular | Estilos por componente |
+| Context API | Gerenciamento de idioma |
+
+---
+
+## 📁 Estrutura
+
 ```
-public/
-  curriculo.pdf
-  foto-perfil.jpg
-  logos/
-    harvard.png
-  projects/
-    gvp-1.jpg, gvp-2.jpg, ...
-src/
-  components/
-    Header.{jsx,css}
-    Hero.{jsx,css}
-    About.{jsx,css}
-    Projects.{jsx,css}
-    Certifications.{jsx,css}
-    Skills.{jsx,css}
-  App.{jsx,css}
-  index.css
-  main.jsx
-vite.config.js
-index.html
+portfolio/
+├── public/
+│   ├── curriculo.pdf
+│   ├── foto-perfil.jpg
+│   ├── logos/harvard.png
+│   └── projects/gvp-*.jpg, oci-*.jpg
+├── src/
+│   ├── components/
+│   │   ├── Header.{jsx,css}
+│   │   ├── Hero.{jsx,css}
+│   │   ├── About.{jsx,css}
+│   │   ├── Experience.{jsx,css}
+│   │   ├── Projects.{jsx,css}
+│   │   ├── Certifications.{jsx,css}
+│   │   ├── Skills.{jsx,css}
+│   │   └── Footer.{jsx,css}
+│   ├── contexts/
+│   │   └── LanguageContext.jsx
+│   ├── App.{jsx,css}
+│   ├── index.css
+│   └── main.jsx
+├── vite.config.js
+└── index.html
 ```
+
+---
+
+## 🚀 Como Executar
+
+```bash
+# Clonar repositório
+git clone https://github.com/JulianoMRA/portfolio.git
+cd portfolio
+
+# Instalar dependências
+npm install
+
+# Iniciar servidor de desenvolvimento
+npm run dev
+```
+
+Acesse `http://localhost:5173`

@@ -1,13 +1,16 @@
 import './Certifications.css'
 import { FaCertificate, FaExternalLinkAlt } from 'react-icons/fa'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Certifications = () => {
+  const { t } = useLanguage()
+
   const certs = [
     {
       name: 'HarvardX: CS50W Web Programming with Python and JavaScript',
       issuer: 'HarvardX',
       date: '2025',
-      link: '#', // substitua pelo link oficial do certificado
+      link: 'https://github.com/JulianoMRA/CS50-s-Web-Programming-with-Python-and-JavaScript',
       logo: '/logos/harvard.png',
     },
   ]
@@ -15,7 +18,7 @@ const Certifications = () => {
   return (
     <section id="certificacoes" className="certifications">
       <div className="container">
-        <h2 className="section-title">Certificações</h2>
+        <h2 className="section-title">{t('certifications.title')}</h2>
 
         <div className="certs-grid">
           {certs.map((c, idx) => (
@@ -43,7 +46,7 @@ const Certifications = () => {
                   rel="noopener noreferrer"
                   className="cert-link"
                 >
-                  Ver certificado <FaExternalLinkAlt />
+                  {t('certifications.viewCertificate')} <FaExternalLinkAlt />
                 </a>
               </div>
             </div>
@@ -55,3 +58,4 @@ const Certifications = () => {
 }
 
 export default Certifications
+

@@ -1,41 +1,44 @@
 import './Hero.css'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Hero = () => {
+  const { t } = useLanguage()
+
   return (
     <section className="hero">
       <div className="container hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
-            Olá, meu nome é <span className="highlight">Juliano!</span>
+            {t('hero.greeting')} <span className="highlight">{t('hero.name')}</span>
           </h1>
-          <h2 className="hero-subtitle">Estudante de Ciência da Computação.</h2>
+          <h2 className="hero-subtitle">{t('hero.subtitle')}</h2>
           <p className="hero-description">
-            Atualmente no 5º semestre na Universidade Federal do Ceará (UFC). Apaixonado por desenvolvimento, programação e tecnologia. Buscando oportunidades para crescer e contribuir com projetos reais. 
+            {t('hero.description')}
           </p>
           <div className="hero-buttons">
-            <a href="#projetos" className="btn btn-primary">Ver Projetos</a>
-            <a 
-              href="https://github.com/JulianoMRA" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a href="#projetos" className="btn btn-primary">{t('hero.viewProjects')}</a>
+            <a
+              href="https://github.com/JulianoMRA"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-secondary"
             >
               GitHub
             </a>
-            <a 
-              href="https://linkedin.com/in/julianomra/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://linkedin.com/in/julianomra/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-linkedin"
             >
               LinkedIn
             </a>
-            <a 
+            <a
               href="/curriculo.pdf"
               className="btn btn-download"
               download
             >
-              Baixar Currículo
+              {t('hero.downloadCV')}
             </a>
           </div>
         </div>
@@ -50,3 +53,4 @@ const Hero = () => {
 }
 
 export default Hero
+

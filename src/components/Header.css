@@ -37,10 +37,17 @@
   color: var(--text-primary);
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-toggle,
 .theme-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0;
+  gap: 4px;
   background: var(--bg-primary);
   color: var(--text-secondary);
   border: 1px solid var(--border-color);
@@ -50,24 +57,31 @@
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 
+.lang-toggle:hover,
 .theme-toggle:hover {
   background: var(--bg-white);
 }
 
+.lang-toggle svg,
 .theme-toggle svg {
   width: 20px;
   height: 20px;
+}
+
+.lang-label {
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
   .logo {
     font-size: 0.9rem;
   }
-  
+
   .nav-links {
     gap: 1rem;
   }
-  
+
   .nav-links a {
     font-size: 0.85rem;
   }
