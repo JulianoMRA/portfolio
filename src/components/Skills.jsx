@@ -14,7 +14,13 @@ import {
   SiGodotengine,
   SiRuby,
   SiNodedotjs,
-  SiMysql
+  SiMysql,
+  SiDart,
+  SiPhp,
+  SiRubyonrails,
+  SiFlutter,
+  SiPostgresql,
+  SiGooglesheets
 } from 'react-icons/si'
 import { FaJava, FaDatabase, FaServer } from 'react-icons/fa'
 import { useLanguage } from '../contexts/LanguageContext'
@@ -31,7 +37,9 @@ const Skills = () => {
         { name: 'Java', icon: FaJava },
         { name: 'C', icon: SiC },
         { name: 'C++', icon: SiCplusplus },
-        { name: 'Ruby', icon: SiRuby }
+        { name: 'Ruby', icon: SiRuby },
+        { name: 'Dart', icon: SiDart },
+        { name: 'PHP', icon: SiPhp }
       ]
     },
     {
@@ -46,7 +54,9 @@ const Skills = () => {
       key: 'backend',
       skills: [
         { name: 'Django', icon: SiDjango },
-        { name: 'Node.js', icon: SiNodedotjs }
+        { name: 'Node.js', icon: SiNodedotjs },
+        { name: 'Rails', icon: SiRubyonrails },
+        { name: 'Flutter', icon: SiFlutter }
       ]
     },
     {
@@ -54,7 +64,8 @@ const Skills = () => {
       skills: [
         { name: 'MySQL', icon: SiMysql },
         { name: 'SQL Server', icon: FaServer },
-        { name: 'SQL', icon: FaDatabase }
+        { name: 'SQL', icon: FaDatabase },
+        { name: 'PgAdmin', icon: SiPostgresql }
       ]
     },
     {
@@ -62,7 +73,8 @@ const Skills = () => {
       skills: [
         { name: 'Git', icon: SiGit },
         { name: 'GitHub', icon: SiGithub },
-        { name: 'Docker', icon: SiDocker }
+        { name: 'Docker', icon: SiDocker },
+        { name: 'Excel/Sheets', icon: SiGooglesheets }
       ]
     },
     {
