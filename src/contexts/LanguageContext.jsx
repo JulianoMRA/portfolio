@@ -99,7 +99,43 @@ const translations = {
             title: 'Projetos',
             context: 'Contexto:',
             details: 'Detalhes:',
-            viewOnGithub: 'Ver no GitHub →'
+            viewOnGithub: 'Ver no GitHub →',
+            image: 'imagem',
+            imagePreview: 'Visualização ampliada',
+            closeModal: 'Fechar',
+            items: {
+                fala_torcedor: {
+                    title: 'Fala, Torcedor — Sistema de Gestão de Sócios',
+                    period: 'Mar de 2026',
+                    description: 'Sistema fullstack de gestão de sócios-torcedores para clubes de futebol, desenvolvido com foco em arquitetura REST escalável, segurança e cobertura de testes.',
+                    details: 'Backend em Node.js/Express com PostgreSQL, integrado a um aplicativo mobile em Flutter. Conta com 7 relatórios analíticos agregados (distribuição demográfica, métricas de desempenho, estatísticas de sócios), validação de CPF, proteção contra SQL injection via queries parametrizadas e medidas de segurança como headers Helmet, CORS e rate limiting (500 req/15 min). A suíte cobre 87 testes automatizados com Jest e Supertest.',
+                },
+                van_bijoux: {
+                    title: 'VanBijoux — Sistema Desktop de Gestão',
+                    period: 'Mar de 2026',
+                    description: 'Sistema desktop para gestão completa de um negócio de bijuterias — produtos, estoque, matérias-primas, vendas e feiras, com dashboard analítico e calculadora de precificação.',
+                    details: 'Construído com React + TypeScript no renderer e Electron + SQLite (Drizzle ORM) no processo principal. Inclui calculadora de precificação com fórmula personalizada, gestão de vendas por canal (WhatsApp, Instagram, feiras), suporte a eventos multidia com rastreamento de custos e 40 testes automatizados com Vitest cobrindo fórmulas de preço, workflows de vendas e integridade do banco.',
+                },
+                gvp: {
+                    title: 'GVP — Gestor de Vestuário Pessoal',
+                    period: 'Jul de 2025',
+                    description: 'Sistema desktop em Java desenvolvido como trabalho final da disciplina de Técnicas de Programação, para organizar e gerenciar vestuário pessoal.',
+                    details: 'O sistema conta com cadastro completo de roupas, acessórios, calçados e roupas íntimas; montagem de looks e registro de utilizações; controle de lavagens e empréstimos; estatísticas visuais sobre uso e empréstimos; interface intuitiva e padronizada com persistência automática dos dados via serialização.',
+                    details2: 'Um exercício intenso de organização, boas práticas e foco na experiência do usuário — aplicando Java, Swing, arquitetura MVC e serialização para transformar uma ideia em produto funcional.',
+                },
+                oci: {
+                    title: 'Interface de Gerenciamento — OCI',
+                    period: 'Jun de 2025',
+                    description: 'Sistema web fullstack para gestão de gabaritos da Olimpíada Cearense de Informática (OCI), desenvolvido durante o processo seletivo do PET Computação UFC 2025.1.',
+                    details: 'Aplicação fullstack com backend em Django e frontend em React, integrando banco de dados SQLite e uma biblioteca em C++ para leitura automática de gabaritos a partir de imagens. Toda a aplicação foi containerizada com Docker, garantindo portabilidade e execução estável em ambientes Linux.',
+                },
+                cockatiel: {
+                    title: 'Cockatiel Adventures',
+                    period: 'Mai de 2025 – Jul de 2025',
+                    description: 'Jogo 2D desenvolvido com a engine Godot para o projeto final da disciplina de Programação para Jogos I (SMD – Sistemas e Mídias Digitais, UFC).',
+                    details: 'Trabalhei em todas as etapas: planejamento, programação em GDScript, design das fases e implementação das mecânicas de jogo. O projeto aprimorou minhas habilidades em lógica de jogos, design de interfaces e organização de cenas na engine Godot.',
+                },
+            },
         },
         certifications: {
             title: 'Certificações',
@@ -180,7 +216,43 @@ const translations = {
             title: 'Projects',
             context: 'Context:',
             details: 'Details:',
-            viewOnGithub: 'View on GitHub →'
+            viewOnGithub: 'View on GitHub →',
+            image: 'image',
+            imagePreview: 'Enlarged preview',
+            closeModal: 'Close',
+            items: {
+                fala_torcedor: {
+                    title: 'Fala, Torcedor — Fan Membership Management System',
+                    period: 'Mar 2026',
+                    description: 'Fullstack fan membership management system for football clubs, built with a focus on scalable REST architecture, security, and test coverage.',
+                    details: 'Backend in Node.js/Express with PostgreSQL, integrated with a Flutter mobile app. Features 7 aggregated analytics reports (demographic distribution, performance metrics, membership statistics), CPF validation, SQL injection protection via parameterized queries, and security measures including Helmet headers, CORS, and rate limiting (500 req/15 min). Test suite covers 87 automated cases with Jest and Supertest.',
+                },
+                van_bijoux: {
+                    title: 'VanBijoux — Desktop Management System',
+                    period: 'Mar 2026',
+                    description: 'Desktop system for comprehensive management of a jewelry business — products, inventory, raw materials, sales, and fairs, with an analytics dashboard and automated pricing calculator.',
+                    details: 'Built with React + TypeScript on the renderer and Electron + SQLite (Drizzle ORM) on the main process. Includes a pricing calculator with a custom formula, sales management by channel (WhatsApp, Instagram, fairs), multi-day event support with cost tracking, and 40 automated tests with Vitest covering pricing formulas, sales workflows, and database integrity.',
+                },
+                gvp: {
+                    title: 'GVP — Personal Wardrobe Manager',
+                    period: 'Jul 2025',
+                    description: 'Java desktop system developed as the final project for the Programming Techniques course, designed to organize and manage a personal wardrobe.',
+                    details: 'The system features full registration of clothing, accessories, shoes, and underwear; outfit assembly and usage tracking; laundry and loan management; visual statistics on usage and loans; intuitive and standardized UI with automatic data persistence via serialization.',
+                    details2: 'An intensive exercise in organization, best practices, and UX focus — applying Java, Swing, MVC architecture, and serialization to turn an idea into a functional, enjoyable product.',
+                },
+                oci: {
+                    title: 'Management Interface — OCI',
+                    period: 'Jun 2025',
+                    description: 'Fullstack web system for managing answer sheets at the Ceará Informatics Olympiad (OCI), developed during the PET Computação UFC 2025.1 selection process.',
+                    details: 'Fullstack application with a Django backend and React frontend, integrating an SQLite database and a C++ library for automatic answer sheet reading from images. The entire application was containerized with Docker, ensuring portability and stable execution in Linux environments.',
+                },
+                cockatiel: {
+                    title: 'Cockatiel Adventures',
+                    period: 'May 2025 – Jul 2025',
+                    description: '2D game developed with the Godot engine for the final project of the Game Programming I elective (SMD – Digital Systems and Media, UFC).',
+                    details: 'I worked on all development stages: planning, GDScript programming, level design, and game mechanic implementation. The project sharpened my skills in game logic, UI design, and scene organization in the Godot engine.',
+                },
+            },
         },
         certifications: {
             title: 'Certifications',
