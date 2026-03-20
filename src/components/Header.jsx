@@ -4,34 +4,53 @@ import { FiSun, FiMoon, FiGlobe } from 'react-icons/fi'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const Header = () => {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('theme')
+    return saved === 'dark' ? 'dark' : 'light'
+  })
+  const [scrolled, setScrolled] = useState(false)
   const { language, toggleLanguage, t } = useLanguage()
 
   useEffect(() => {
-    const saved = localStorage.getItem('theme')
-    const initial = saved === 'dark' ? 'dark' : 'light'
-    setTheme(initial)
-    document.documentElement.classList.toggle('dark', initial === 'dark')
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+  }, [theme])
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark'
     setTheme(next)
     localStorage.setItem('theme', next)
-    document.documentElement.classList.toggle('dark', next === 'dark')
   }
 
   return (
-    <header className="header">
+    <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
       <div className="container">
         <nav className="nav">
-          <a href="#" className="logo">Juliano M. R. Alencar | {language === 'pt' ? 'Estudante' : 'Student'}</a>
+          <a href="#" className="logo">
+            <span className="logo-name">Juliano</span>
+            <span className="logo-dot">.</span>
+          </a>
           <ul className="nav-links">
-            <li><a href="#sobre">{t('nav.about')}</a></li>
-            <li><a href="#experiencia">{t('nav.experience')}</a></li>
-            <li><a href="#projetos">{t('nav.projects')}</a></li>
-            <li><a href="#certificacoes">{t('nav.certifications')}</a></li>
-            <li><a href="#habilidades">{t('nav.skills')}</a></li>
+            <li>
+              <a href="#sobre">{t('nav.about')}</a>
+            </li>
+            <li>
+              <a href="#experiencia">{t('nav.experience')}</a>
+            </li>
+            <li>
+              <a href="#projetos">{t('nav.projects')}</a>
+            </li>
+            <li>
+              <a href="#certificacoes">{t('nav.certifications')}</a>
+            </li>
+            <li>
+              <a href="#habilidades">{t('nav.skills')}</a>
+            </li>
           </ul>
           <div className="header-controls">
             <button
@@ -58,4 +77,3 @@ const Header = () => {
 }
 
 export default Header
-

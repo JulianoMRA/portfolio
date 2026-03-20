@@ -1,7 +1,8 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useContext, useState } from 'react'
 
 const LanguageContext = createContext()
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useLanguage = () => {
     const context = useContext(LanguageContext)
     if (!context) {
@@ -11,14 +12,10 @@ export const useLanguage = () => {
 }
 
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('pt')
-
-    useEffect(() => {
+    const [language, setLanguage] = useState(() => {
         const saved = localStorage.getItem('language')
-        if (saved === 'en' || saved === 'pt') {
-            setLanguage(saved)
-        }
-    }, [])
+        return saved === 'en' || saved === 'pt' ? saved : 'pt'
+    })
 
     const toggleLanguage = () => {
         const next = language === 'pt' ? 'en' : 'pt'
@@ -58,16 +55,16 @@ const translations = {
             greeting: 'Olá, meu nome é',
             name: 'Juliano!',
             subtitle: 'Estudante de Ciência da Computação.',
-            description: 'Atualmente no 5º semestre na Universidade Federal do Ceará (UFC). Apaixonado por desenvolvimento, programação e tecnologia. Buscando oportunidades para crescer e contribuir com projetos reais.',
+            description: 'Focado em desenvolvimento fullstack (Node.js/Flutter/React), com experiência prática em arquitetura REST e gestão ágil. Buscando estágio onde possa contribuir com soluções escaláveis e bem estruturadas.',
             viewProjects: 'Ver Projetos',
             downloadCV: 'Baixar Currículo'
         },
         about: {
             title: 'Sobre',
-            p1: '<strong>Bacharelando em Ciência da Computação</strong> pela Universidade Federal do Ceará (UFC), atualmente no 5º semestre. Aprovado via SISU, desenvolvo habilidades em raciocínio lógico, programação, algoritmos e desenvolvimento.',
-            p2: 'Atualmente, sou <strong>Bolsista Remunerado</strong> no Programa de Educação Tutorial (PET) da computação, onde participo ativamente de projetos de ensino, pesquisa e extensão. Também atuei como <strong>Bolsista Voluntário</strong> no Residência em Segurança da Informação (RSI), laboratório focado em Segurança Digital, intensificando conhecimentos na área.',
-            p3: 'Além disso, trabalhei como <strong>Assessor Comercial</strong> na Ceos Jr., Empresa Júnior do curso de Ciência da Computação da UFC, desenvolvendo visão sobre gestão, operação, comunicação e trabalho em equipe.',
-            p4: 'Busco oportunidades de estágio que me permitam aplicar e aprofundar os conhecimentos adquiridos, contribuindo com projetos reais e desafiadores. Tenho como objetivo desenvolver uma carreira sólida como desenvolvedor de software, com foco em solucionar problemas, aprender novos recursos e colaborar com uma equipe.'
+            p1: '<strong>Bacharelando em Ciência da Computação</strong> pela Universidade Federal do Ceará (UFC), focado em desenvolvimento fullstack com Node.js, Flutter e React. Desenvolvo habilidades em arquitetura REST, modelagem relacional e boas práticas de engenharia de software.',
+            p2: 'Atualmente, sou <strong>Bolsista Remunerado</strong> no Programa de Educação Tutorial (PET) da computação, onde organizo eventos acadêmicos de grande porte e colaboro em projetos de ensino, pesquisa e extensão. Também atuei como <strong>Bolsista Voluntário</strong> no RSI (Residência em Segurança da Informação), aprofundando conhecimentos práticos em segurança cibernética por meio de CTFs e Hackathons.',
+            p3: 'Também atuei como <strong>Assessor Comercial</strong> na Ceos Jr., Empresa Júnior da Computação da UFC, onde gerenciei o ciclo completo de vendas de serviços de tecnologia e otimizei processos com dashboards orientados a dados e metodologias ágeis.',
+            p4: 'Busco oportunidades de estágio onde possa contribuir com soluções escaláveis e bem estruturadas, colaborando com equipes que valorizam qualidade de código, boas práticas e aprendizado contínuo.'
         },
         experience: {
             title: 'Experiência',
@@ -75,30 +72,26 @@ const translations = {
                 title: 'PET Computação',
                 role: 'Bolsista Remunerado',
                 highlights: [
-                    'Aprovado em 2º lugar via processo seletivo',
-                    'Participação em projetos de ensino, pesquisa e extensão',
-                    'Apoio na organização da OCI (Olimpíada Cearense de Informática)',
-                    'Contribuição na SAC (Semana Acadêmica da Computação) e UWEB'
+                    'Organizei e conduzi eventos acadêmicos de grande porte (INCLUDE, OCI, SAC, UWEB)',
+                    'Desenvolvi e adaptei problemas de programação para a OCI, estimulando o raciocínio computacional de dezenas de participantes',
+                    'Colaborei em projetos que integram ensino, pesquisa e extensão, promovendo iniciativas de tecnologia para a comunidade acadêmica'
                 ]
             },
             rsi: {
                 title: 'RSI - Residência em Segurança da Informação',
                 role: 'Bolsista Voluntário',
                 highlights: [
-                    'Aprovado via processo seletivo',
-                    'Aprimoramento de conhecimentos em Segurança da Informação',
-                    'Participação em Hackathons e CTFs',
-                    'Organização de palestras internas'
+                    'Aprofundei conhecimentos práticos em Segurança da Informação por meio de desafios CTF (Capture The Flag) e Hackathons',
+                    'Auxiliei na organização de palestras internas, contribuindo para a disseminação de boas práticas de segurança cibernética'
                 ]
             },
             ceos: {
                 title: 'Ceos Jr. - Empresa Júnior da Computação',
                 role: 'Assessor Comercial',
                 highlights: [
-                    'Prospecção de novos clientes e reuniões de diagnóstico',
-                    'Elaboração de estratégias comerciais e análise de desempenho',
-                    'Relacionamento com parceiros e leads',
-                    'Atuação com metodologias ágeis (Scrum/Kanban)'
+                    'Conduzi o ciclo completo de vendas de serviços de tecnologia, da prospecção ao fechamento, contribuindo para o aumento de novos contratos',
+                    'Otimizei a análise de desempenho da equipe via dashboards e relatórios orientados a dados, reduzindo o tempo de geração de relatórios mensais',
+                    'Gerenciei demandas com metodologias ágeis (Scrum/Kanban), garantindo entregas no prazo e fortalecendo o relacionamento com parceiros'
                 ]
             }
         },
@@ -120,14 +113,14 @@ const translations = {
                 backend: 'Backend',
                 database: 'Banco de Dados',
                 devops: 'DevOps & Ferramentas',
-                gamedev: 'Game Dev'
+                other: 'Outros'
             }
         },
         footer: {
             contact: 'Contato',
             languages: 'Idiomas',
             portuguese: 'Português (Nativo)',
-            english: 'Inglês (Intermediário Avançado)',
+            english: 'Inglês (Avançado)',
             rights: 'Todos os direitos reservados.'
         }
     },
@@ -143,16 +136,16 @@ const translations = {
             greeting: "Hi, I'm",
             name: 'Juliano!',
             subtitle: 'Computer Science Student.',
-            description: "Currently in my 5th semester at the Federal University of Ceará (UFC). Passionate about development, programming, and technology. Looking for opportunities to grow and contribute to real projects.",
+            description: 'Focused on fullstack development (Node.js/Flutter/React), with practical experience in REST architecture and agile management. Seeking an internship to contribute with scalable, well-structured solutions.',
             viewProjects: 'View Projects',
             downloadCV: 'Download CV'
         },
         about: {
             title: 'About',
-            p1: "<strong>Bachelor's student in Computer Science</strong> at the Federal University of Ceará (UFC), currently in the 5th semester. Admitted through SISU, developing skills in logical reasoning, programming, algorithms, and development.",
-            p2: "Currently, I'm a <strong>Paid Fellow</strong> at the Tutorial Education Program (PET) in Computing, where I actively participate in teaching, research, and extension projects. I also worked as a <strong>Volunteer Fellow</strong> at the Information Security Residence (RSI), a lab focused on Digital Security, deepening my knowledge in the field.",
-            p3: "Additionally, I worked as a <strong>Commercial Advisor</strong> at Ceos Jr., the Junior Enterprise of the Computer Science program at UFC, developing skills in management, operations, communication, and teamwork.",
-            p4: "I'm seeking internship opportunities that allow me to apply and deepen the knowledge I've acquired, contributing to real and challenging projects. My goal is to build a solid career as a software developer, focused on problem-solving, learning new skills, and collaborating with a team."
+            p1: "<strong>Bachelor's student in Computer Science</strong> at the Federal University of Ceará (UFC), focused on fullstack development with Node.js, Flutter, and React. Building skills in REST architecture, relational modeling, and software engineering best practices.",
+            p2: "Currently a <strong>Paid Fellow</strong> at the Tutorial Education Program (PET) in Computing, where I organize large-scale academic events and collaborate on teaching, research, and outreach projects. I also served as a <strong>Volunteer Fellow</strong> at RSI (Information Security Residence), deepening practical cybersecurity knowledge through CTFs and Hackathons.",
+            p3: "I also worked as a <strong>Commercial Advisor</strong> at Ceos Jr., the Computing Junior Enterprise at UFC, managing the full sales cycle for tech services and optimizing processes through data-driven dashboards and agile methodologies.",
+            p4: "I seek internship opportunities where I can contribute with scalable and well-structured solutions, collaborating with teams that value code quality, best practices, and continuous learning."
         },
         experience: {
             title: 'Experience',
@@ -160,30 +153,26 @@ const translations = {
                 title: 'PET Computing',
                 role: 'Paid Fellow',
                 highlights: [
-                    'Ranked 2nd in the selection process',
-                    'Participation in teaching, research, and extension projects',
-                    'Support in organizing OCI (Ceará Informatics Olympiad)',
-                    'Contribution to SAC (Academic Week of Computing) and UWEB'
+                    'Organized and led large-scale academic events (INCLUDE, OCI, SAC, UWEB)',
+                    'Developed and adapted programming problems for the OCI, stimulating computational thinking in dozens of participants',
+                    'Collaborated on projects integrating teaching, research, and outreach, promoting technology initiatives for the academic community'
                 ]
             },
             rsi: {
                 title: 'RSI - Information Security Residence',
                 role: 'Volunteer Fellow',
                 highlights: [
-                    'Selected through competitive process',
-                    'Enhancement of Information Security knowledge',
-                    'Participation in Hackathons and CTFs',
-                    'Organization of internal talks'
+                    'Deepened practical Information Security knowledge through CTF (Capture The Flag) challenges and Hackathons',
+                    'Assisted in organizing internal talks, contributing to the spread of cybersecurity best practices among project members'
                 ]
             },
             ceos: {
                 title: 'Ceos Jr. - Computing Junior Enterprise',
                 role: 'Commercial Advisor',
                 highlights: [
-                    'Prospecting new clients and diagnostic meetings',
-                    'Development of commercial strategies and performance analysis',
-                    'Relationship management with partners and leads',
-                    'Working with agile methodologies (Scrum/Kanban)'
+                    'Led the complete sales cycle for tech services, from prospecting to closing, contributing to growth in new contracts',
+                    'Optimized team performance analysis through data-driven dashboards and reports, reducing monthly report generation time',
+                    'Managed workflows with agile methodologies (Scrum/Kanban), ensuring on-time delivery and strengthening partner relationships'
                 ]
             }
         },
@@ -205,14 +194,14 @@ const translations = {
                 backend: 'Backend',
                 database: 'Database',
                 devops: 'DevOps & Tools',
-                gamedev: 'Game Dev'
+                other: 'Other'
             }
         },
         footer: {
             contact: 'Contact',
             languages: 'Languages',
             portuguese: 'Portuguese (Native)',
-            english: 'English (Upper Intermediate)',
+            english: 'English (Advanced)',
             rights: 'All rights reserved.'
         }
     }
