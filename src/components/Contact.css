@@ -1,0 +1,113 @@
+.contact {
+    padding: var(--s-9) 0;
+    background: var(--ink);
+    color: var(--paper);
+    position: relative;
+}
+html[data-theme="dark"] .contact {
+    background: var(--paper-soft);
+    color: var(--ink);
+}
+.contact .sec-head__title { color: var(--paper); }
+html[data-theme="dark"] .contact .sec-head__title { color: var(--ink); }
+
+.contact__title {
+    font-family: var(--f-display);
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: var(--s-7) 0 var(--s-6);
+    color: var(--paper);
+    font-variation-settings: "opsz" 144, "SOFT" 40;
+}
+html[data-theme="dark"] .contact__title { color: var(--ink); }
+.contact__title em {
+    font-style: italic;
+    color: var(--terracotta-soft);
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+.contact__sub {
+    font-family: var(--f-display);
+    font-size: 1.3rem;
+    max-width: 46ch;
+    color: color-mix(in oklab, var(--paper) 75%, transparent);
+    line-height: 1.5;
+    font-variation-settings: "opsz" 36, "SOFT" 20;
+}
+html[data-theme="dark"] .contact__sub { color: var(--ink-soft); }
+
+.contact__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--s-7);
+    margin-top: var(--s-8);
+    padding-top: var(--s-6);
+    border-top: 1px solid color-mix(in oklab, var(--paper) 20%, transparent);
+}
+html[data-theme="dark"] .contact__grid { border-top-color: var(--line); }
+
+.contact__email {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    padding: var(--s-4) 0;
+    border-bottom: 1px solid color-mix(in oklab, var(--paper) 20%, transparent);
+    font-family: var(--f-display);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 400;
+    font-variation-settings: "opsz" 48, "SOFT" 30;
+}
+html[data-theme="dark"] .contact__email { border-bottom-color: var(--line); }
+.contact__email-addr {
+    transition: color var(--t-fast) var(--ease);
+    cursor: pointer;
+    word-break: break-all;
+}
+.contact__email-addr:hover { color: var(--terracotta-soft); font-style: italic; }
+.contact__copy {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: color-mix(in oklab, var(--paper) 65%, transparent);
+    padding: 8px 12px;
+    border: 1px solid color-mix(in oklab, var(--paper) 25%, transparent);
+    transition: all var(--t-fast) var(--ease);
+    flex-shrink: 0;
+}
+html[data-theme="dark"] .contact__copy { color: var(--ink-mute); border-color: var(--line); }
+.contact__copy:hover { color: var(--terracotta-soft); border-color: var(--terracotta-soft); }
+
+.contact__social {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+}
+.contact__social-label {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: color-mix(in oklab, var(--paper) 55%, transparent);
+    margin-bottom: var(--s-2);
+}
+html[data-theme="dark"] .contact__social-label { color: var(--ink-mute); }
+.contact__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--s-3) 0;
+    font-family: var(--f-display);
+    font-size: 1.2rem;
+    border-bottom: 1px solid color-mix(in oklab, var(--paper) 15%, transparent);
+    transition: color var(--t-fast) var(--ease), padding-left var(--t-med) var(--ease);
+    font-variation-settings: "opsz" 36, "SOFT" 30;
+}
+html[data-theme="dark"] .contact__social-link { border-bottom-color: var(--line-soft); }
+.contact__social-link:hover { color: var(--terracotta-soft); padding-left: 8px; font-style: italic; }
+.contact__social-link span:last-child { opacity: 0.5; transition: opacity var(--t-fast) var(--ease); }
+.contact__social-link:hover span:last-child { opacity: 1; }
+
+@media (max-width: 720px) { .contact__grid { grid-template-columns: 1fr; gap: var(--s-5); } }

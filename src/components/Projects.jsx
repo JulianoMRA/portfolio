@@ -1,178 +1,106 @@
 import './Projects.css'
-import { useState, useEffect } from 'react'
-import { useLanguage } from '../contexts/LanguageContext'
+import { useState } from 'react'
+import { useLanguage, PROJECTS } from '../contexts/LanguageContext'
+import { useReveal } from '../hooks/useReveal'
 
 const Projects = () => {
-  const [modalImage, setModalImage] = useState(null)
-  const { t } = useLanguage()
+    const { t, language } = useLanguage()
+    const headRef = useReveal()
+    const [expanded, setExpanded] = useState(null)
 
-  useEffect(() => {
-    if (!modalImage) return
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') setModalImage(null)
-    }
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [modalImage])
-
-  // Converte URLs do YouTube (watch/shorts/share) para o formato embed
-  const toEmbed = (url) => {
-    if (!url) return ''
-    const match = url.match(/(?:youtu.be\/|youtube.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/)
-    return match ? `https://www.youtube.com/embed/${match[1]}` : url
-  }
-
-  // Dados estáticos (não traduzíveis): links, imagens, tags técnicas
-  const projectsStatic = [
-    {
-      key: 'van_bijoux',
-      github: 'https://github.com/JulianoMRA/VanBijouxSys',
-      tags: ['TypeScript', 'React', 'Electron', 'SQLite', 'Drizzle ORM', 'Vitest', 'Tailwind'],
-    },
-    {
-      key: 'coup_online',
-      liveUrl: 'https://coup-rho-ten.vercel.app',
-      github: 'https://github.com/JulianoMRA/Coup',
-      tags: ['TypeScript', 'Next.js', 'Express', 'Socket.IO', 'Vitest', 'GitHub Actions'],
-    },
-    {
-      key: 'fala_torcedor',
-      github: 'https://github.com/JulianoMRA/ProcessoSeletivoG4Flex',
-      tags: ['Flutter', 'Node.js', 'Express', 'PostgreSQL', 'REST API', 'Jest', 'Security'],
-    },
-    {
-      key: 'oci',
-      github: 'https://github.com/JulianoMRA/FASE1-PSPET-2025.1',
-      tags: ['Django', 'React', 'SQLite', 'Docker', 'C++', 'Linux', 'Teamwork'],
-      images: [
-        '/projects/oci-1.jpg',
-        '/projects/oci-2.jpg',
-        '/projects/oci-3.jpg',
-        '/projects/oci-4.jpg',
-        '/projects/oci-5.jpg',
-        '/projects/oci-6.jpg',
-      ],
-    },
-  ]
-
-  return (
-    <section id="projetos" className="projects">
-      <div className="container">
-        <h2 className="section-title">{t('projects.title')}</h2>
-        <div className="projects-grid">
-          {projectsStatic.map((staticData) => {
-            const text = t(`projects.items.${staticData.key}`)
-
-            return (
-              <div key={staticData.key} className="project-card">
-                <div className="project-header">
-                  <h3 className="project-title">{text.title}</h3>
-                  <span className="project-period">{text.period}</span>
-                </div>
-
-                {staticData.videoUrl && (
-                  <div className="project-video">
-                    <div className="video-wrapper">
-                      <iframe
-                        src={toEmbed(staticData.videoUrl)}
-                        title={`${text.title} vídeo`}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                      />
+    return (
+        <section id="work" className="work">
+            <div className="wrap">
+                <header className="sec-head reveal" ref={headRef}>
+                    <div>
+                        <span className="kicker">{t('work.kicker')}</span>
+                        <h2 className="sec-head__title">{t('work.title')}</h2>
                     </div>
-                  </div>
-                )}
+                    <span className="sec-head__num">02 / 05</span>
+                </header>
 
-                {staticData.images && staticData.images.length > 0 && (
-                  <div className="project-images">
-                    {staticData.images.map((src, i) => (
-                      <img
-                        key={i}
-                        src={src}
-                        alt={`${text.title} — ${t('projects.image')} ${i + 1}`}
-                        className="project-image"
-                        role="button"
-                        tabIndex={0}
-                        onError={(e) => {
-                          e.currentTarget.src =
-                            'https://placehold.co/600x400?text=Imagem+do+Projeto'
-                        }}
-                        onClick={() => setModalImage(src)}
-                        onKeyDown={(e) => e.key === 'Enter' && setModalImage(src)}
-                      />
+                <p className="work__intro">{t('work.subtitle')}</p>
+
+                <div className="work__list">
+                    {PROJECTS.map((p, i) => (
+                        <ProjectRow
+                            key={p.key}
+                            project={p}
+                            index={i}
+                            lang={language}
+                            t={t}
+                            expanded={expanded === p.key}
+                            onToggle={() => setExpanded(expanded === p.key ? null : p.key)}
+                        />
                     ))}
-                  </div>
-                )}
-
-                <div className="project-content">
-                  <p className="project-context">
-                    <strong>{t('projects.context')}</strong> {text.description}
-                  </p>
-
-                  <p className="project-action">
-                    <strong>{t('projects.details')}</strong> {text.details}
-                  </p>
-
-                  {text.details2 && <p className="project-result">{text.details2}</p>}
-
-                  {staticData.liveUrl && (
-                    <a
-                      href={staticData.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      {t('projects.playLive')}
-                    </a>
-                  )}
-
-                  {staticData.github && (
-                    <a
-                      href={staticData.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      {t('projects.viewOnGithub')}
-                    </a>
-                  )}
                 </div>
-
-                <div className="project-tags">
-                  {staticData.tags.map((tag, i) => (
-                    <span key={i} className="tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )
-          })}
-        </div>
-
-        {modalImage && (
-          <div className="image-modal" onClick={() => setModalImage(null)}>
-            <div className="image-modal-content">
-              <img
-                src={modalImage}
-                alt={t('projects.imagePreview')}
-                onError={(e) => {
-                  e.currentTarget.src = 'https://placehold.co/1200x800?text=Preview'
-                }}
-              />
-              <button
-                className="image-modal-close"
-                aria-label={t('projects.closeModal')}
-                onClick={() => setModalImage(null)}
-              >
-                ✕
-              </button>
             </div>
-          </div>
-        )}
-      </div>
-    </section>
-  )
+        </section>
+    )
+}
+
+const ProjectRow = ({ project, index, lang, t, expanded, onToggle }) => {
+    const ref = useReveal()
+    return (
+        <article
+            className={`project reveal ${expanded ? 'expanded' : ''}`}
+            ref={ref}
+            onClick={onToggle}
+        >
+            <div className="project__num">/{String(index + 1).padStart(2, '0')}</div>
+            <div className="project__main">
+                <div className="project__year">
+                    <span className="project__year-chip">{project.year}</span>
+                    <span>{project.type[lang]}</span>
+                </div>
+                <h3 className="project__title">{project.title[lang]}</h3>
+                <p className="project__subtitle">{project.subtitle[lang]}</p>
+                <div className="project__tags">
+                    {project.tags.map((tag) => (
+                        <span key={tag} className="project__tag">{tag}</span>
+                    ))}
+                </div>
+            </div>
+            <div className="project__body">
+                <p className="project__desc">{project.description[lang]}</p>
+                <div className="project__footer">
+                    <div className="project__metric">
+                        <span className="project__metric-value">{project.metric.value}</span>
+                        <span className="project__metric-label">{project.metric.label[lang]}</span>
+                    </div>
+                </div>
+            </div>
+            <span className="project__arrow">↗</span>
+            <div className="project__details">
+                <div className="project__details-inner">
+                    {project.details[lang]}
+                    <br />
+                    <div className="project__details-links">
+                        <a
+                            className="project__details-link"
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {t('work.view')} <span>→</span>
+                        </a>
+                        {project.liveUrl && (
+                            <a
+                                className="project__details-link"
+                                href={project.liveUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                {t('work.play')} <span>↗</span>
+                            </a>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </article>
+    )
 }
 
 export default Projects
