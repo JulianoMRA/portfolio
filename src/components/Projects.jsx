@@ -53,18 +53,6 @@ const Projects = () => {
         '/projects/oci-6.jpg',
       ],
     },
-    {
-      key: 'gvp',
-      github: 'https://github.com/JulianoMRA/TrabalhoFinalGVP',
-      tags: ['Java', 'OOP', 'Swing', 'MVC', 'Serialization', 'UI Design'],
-      images: ['/projects/gvp-1.jpg', '/projects/gvp-2.jpg', '/projects/gvp-3.jpg'],
-    },
-    {
-      key: 'cockatiel',
-      github: 'https://github.com/JulianoMRA/Cockatiel-Adventures',
-      tags: ['Godot', 'GDScript', 'Game Dev', 'Level Design'],
-      videoUrl: 'https://www.youtube.com/watch?v=qMbqNA15g4E',
-    },
   ]
 
   return (

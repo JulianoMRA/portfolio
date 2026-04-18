@@ -98,13 +98,13 @@ const translations = {
             items: {
                 van_bijoux: {
                     title: 'VanBijouxSys — ERP desktop em produção',
-                    period: '2024 – Presente',
+                    period: '2026 – Presente',
                     description: 'ERP desktop em produção para gestão de um negócio de bijuterias, em uso diário por usuária real. Inclui 8 módulos interdependentes: dashboard, produtos, estoque, precificação, vendas, feiras e fluxo de caixa.',
                     details: 'Construído em TypeScript com React 18 no renderer e Electron + SQLite (Drizzle ORM) no processo principal. Possui 62 testes automatizados (unitários e de integração) no Vitest, cobrindo fórmula de precificação, dedução de insumos e restauração transacional de estoque. Arquitetura com IPC seguro via contextBridge, SQL parametrizado e ErrorBoundary em produção. Hoje na versão 1.5.',
                 },
                 coup_online: {
                     title: 'Coup Online — Jogo multiplayer em tempo real',
-                    period: '2025 – Presente',
+                    period: '2026 – Presente',
                     description: 'Jogo de cartas multiplayer em tempo real jogável direto pelo navegador, sem cadastro nem instalação. Cada sala é criada por código e compartilhada via link.',
                     details: 'Monorepo em TypeScript com npm workspaces compartilhando tipos entre frontend (Next.js) e backend (Express + Socket.IO). Servidor autoritativo com máquina de estados do jogo, comunicação bidirecional via WebSocket e gerenciamento de salas em memória. CI configurado no GitHub Actions (lint, testes, secretlint) e deploy contínuo na Vercel (frontend) e Railway (backend).',
                 },
@@ -119,19 +119,6 @@ const translations = {
                     period: 'Jun de 2025',
                     description: 'Sistema web fullstack para gestão de gabaritos da Olimpíada Cearense de Informática (OCI), desenvolvido durante o processo seletivo do PET Computação UFC 2025.1.',
                     details: 'Aplicação fullstack com backend em Django e frontend em React, integrando banco de dados SQLite e uma biblioteca em C++ para leitura automática de gabaritos a partir de imagens. Toda a aplicação foi containerizada com Docker, garantindo portabilidade e execução estável em ambientes Linux.',
-                },
-                gvp: {
-                    title: 'GVP — Gestor de Vestuário Pessoal',
-                    period: 'Jul de 2025',
-                    description: 'Sistema desktop em Java desenvolvido como trabalho final da disciplina de Técnicas de Programação, para organizar e gerenciar vestuário pessoal.',
-                    details: 'O sistema conta com cadastro completo de roupas, acessórios, calçados e roupas íntimas; montagem de looks e registro de utilizações; controle de lavagens e empréstimos; estatísticas visuais sobre uso e empréstimos; interface intuitiva e padronizada com persistência automática dos dados via serialização.',
-                    details2: 'Um exercício intenso de organização, boas práticas e foco na experiência do usuário — aplicando Java, Swing, arquitetura MVC e serialização para transformar uma ideia em produto funcional.',
-                },
-                cockatiel: {
-                    title: 'Cockatiel Adventures',
-                    period: 'Mai de 2025 – Jul de 2025',
-                    description: 'Jogo 2D desenvolvido com a engine Godot para o projeto final da disciplina de Programação para Jogos I (SMD – Sistemas e Mídias Digitais, UFC).',
-                    details: 'Trabalhei em todas as etapas: planejamento, programação em GDScript, design das fases e implementação das mecânicas de jogo. O projeto aprimorou minhas habilidades em lógica de jogos, design de interfaces e organização de cenas na engine Godot.',
                 },
             },
         },
@@ -212,13 +199,13 @@ const translations = {
             items: {
                 van_bijoux: {
                     title: 'VanBijouxSys — Desktop ERP in production',
-                    period: '2024 – Present',
+                    period: '2026 – Present',
                     description: 'Desktop ERP in production for managing a jewelry business, used daily by a real user. Includes 8 interdependent modules: dashboard, products, inventory, pricing, sales, fairs, and cash flow.',
                     details: 'Built in TypeScript with React 18 on the renderer and Electron + SQLite (Drizzle ORM) on the main process. Includes 62 automated tests (unit and integration) in Vitest, covering the pricing formula, input material deduction, and transactional stock restoration. Architecture with secure IPC via contextBridge, parameterized SQL, and ErrorBoundary in production. Currently on version 1.5.',
                 },
                 coup_online: {
                     title: 'Coup Online — Real-time multiplayer game',
-                    period: '2025 – Present',
+                    period: '2026 – Present',
                     description: 'Real-time multiplayer card game playable directly in the browser, no sign-up or installation required. Each room is created by a code and shared via link.',
                     details: 'TypeScript monorepo with npm workspaces sharing types between frontend (Next.js) and backend (Express + Socket.IO). Authoritative server with a game state machine, bidirectional WebSocket communication, and in-memory room management. CI configured with GitHub Actions (lint, tests, secretlint) and continuous deployment to Vercel (frontend) and Railway (backend).',
                 },
@@ -233,19 +220,6 @@ const translations = {
                     period: 'Jun 2025',
                     description: 'Fullstack web system for managing answer sheets at the Ceará Informatics Olympiad (OCI), developed during the PET Computação UFC 2025.1 selection process.',
                     details: 'Fullstack application with a Django backend and React frontend, integrating an SQLite database and a C++ library for automatic answer sheet reading from images. The entire application was containerized with Docker, ensuring portability and stable execution in Linux environments.',
-                },
-                gvp: {
-                    title: 'GVP — Personal Wardrobe Manager',
-                    period: 'Jul 2025',
-                    description: 'Java desktop system developed as the final project for the Programming Techniques course, designed to organize and manage a personal wardrobe.',
-                    details: 'The system features full registration of clothing, accessories, shoes, and underwear; outfit assembly and usage tracking; laundry and loan management; visual statistics on usage and loans; intuitive and standardized UI with automatic data persistence via serialization.',
-                    details2: 'An intensive exercise in organization, best practices, and UX focus — applying Java, Swing, MVC architecture, and serialization to turn an idea into a functional, enjoyable product.',
-                },
-                cockatiel: {
-                    title: 'Cockatiel Adventures',
-                    period: 'May 2025 – Jul 2025',
-                    description: '2D game developed with the Godot engine for the final project of the Game Programming I elective (SMD – Digital Systems and Media, UFC).',
-                    details: 'I worked on all development stages: planning, GDScript programming, level design, and game mechanic implementation. The project sharpened my skills in game logic, UI design, and scene organization in the Godot engine.',
                 },
             },
         },
