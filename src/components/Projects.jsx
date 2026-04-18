@@ -25,20 +25,20 @@ const Projects = () => {
   // Dados estáticos (não traduzíveis): links, imagens, tags técnicas
   const projectsStatic = [
     {
+      key: 'van_bijoux',
+      github: 'https://github.com/JulianoMRA/VanBijouxSys',
+      tags: ['TypeScript', 'React', 'Electron', 'SQLite', 'Drizzle ORM', 'Vitest', 'Tailwind'],
+    },
+    {
+      key: 'coup_online',
+      liveUrl: 'https://coup-rho-ten.vercel.app',
+      github: 'https://github.com/JulianoMRA/Coup',
+      tags: ['TypeScript', 'Next.js', 'Express', 'Socket.IO', 'Vitest', 'GitHub Actions'],
+    },
+    {
       key: 'fala_torcedor',
       github: 'https://github.com/JulianoMRA/ProcessoSeletivoG4Flex',
       tags: ['Flutter', 'Node.js', 'Express', 'PostgreSQL', 'REST API', 'Jest', 'Security'],
-    },
-    {
-      key: 'van_bijoux',
-      github: 'https://github.com/JulianoMRA/VanBijouxSys',
-      tags: ['React', 'TypeScript', 'Electron', 'SQLite', 'Drizzle ORM', 'Vitest', 'Recharts'],
-    },
-    {
-      key: 'gvp',
-      github: 'https://github.com/JulianoMRA/TrabalhoFinalGVP',
-      tags: ['Java', 'OOP', 'Swing', 'MVC', 'Serialization', 'UI Design'],
-      images: ['/projects/gvp-1.jpg', '/projects/gvp-2.jpg', '/projects/gvp-3.jpg'],
     },
     {
       key: 'oci',
@@ -52,6 +52,12 @@ const Projects = () => {
         '/projects/oci-5.jpg',
         '/projects/oci-6.jpg',
       ],
+    },
+    {
+      key: 'gvp',
+      github: 'https://github.com/JulianoMRA/TrabalhoFinalGVP',
+      tags: ['Java', 'OOP', 'Swing', 'MVC', 'Serialization', 'UI Design'],
+      images: ['/projects/gvp-1.jpg', '/projects/gvp-2.jpg', '/projects/gvp-3.jpg'],
     },
     {
       key: 'cockatiel',
@@ -120,6 +126,17 @@ const Projects = () => {
                   </p>
 
                   {text.details2 && <p className="project-result">{text.details2}</p>}
+
+                  {staticData.liveUrl && (
+                    <a
+                      href={staticData.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      {t('projects.playLive')}
+                    </a>
+                  )}
 
                   {staticData.github && (
                     <a

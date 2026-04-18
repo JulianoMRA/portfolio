@@ -1,5 +1,5 @@
 import './Experience.css'
-import { FaGraduationCap, FaShieldAlt, FaBriefcase } from 'react-icons/fa'
+import { FaGraduationCap, FaBriefcase } from 'react-icons/fa'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const Experience = () => {
@@ -11,12 +11,6 @@ const Experience = () => {
             period: 'Jul/25 - ' + (language === 'pt' ? 'Presente' : 'Present'),
             location: 'Fortaleza, Ceará',
             icon: FaGraduationCap
-        },
-        {
-            key: 'rsi',
-            period: 'Abr/25 - Jul/25',
-            location: 'Fortaleza, Ceará',
-            icon: FaShieldAlt
         },
         {
             key: 'ceos',

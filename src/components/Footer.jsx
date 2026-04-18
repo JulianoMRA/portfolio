@@ -34,7 +34,7 @@ const Footer = () => {
                     <div className="footer-info">
                         <h3 className="footer-title">Juliano M. R. Alencar</h3>
                         <p className="footer-subtitle">
-                            {language === 'pt' ? 'Estudante de Ciência da Computação' : 'Computer Science Student'}
+                            {language === 'pt' ? 'Desenvolvedor Fullstack' : 'Fullstack Developer'}
                         </p>
                         <p className="footer-location">
                             <FaMapMarkerAlt /> Fortaleza, Ceará - Brasil

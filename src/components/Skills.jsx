@@ -1,30 +1,30 @@
 import './Skills.css'
 import {
-  SiPython,
+  SiTypescript,
   SiJavascript,
-  SiReact,
-  SiDjango,
-  SiC,
-  SiCplusplus,
-  SiGit,
-  SiGithub,
-  SiDocker,
-  SiHtml5,
-  SiCss3,
-  SiGodotengine,
-  SiRuby,
-  SiNodedotjs,
-  SiMysql,
+  SiPython,
   SiDart,
-  SiPhp,
-  SiRubyonrails,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
   SiFlutter,
-  SiPostgresql,
-  SiGooglesheets,
-  SiLinux,
+  SiNodedotjs,
   SiExpress,
+  SiSocketdotio,
+  SiDjango,
+  SiElectron,
+  SiPostgresql,
+  SiSqlite,
+  SiDrizzle,
+  SiGit,
+  SiDocker,
+  SiGithubactions,
+  SiVercel,
+  SiRailway,
+  SiLinux,
+  SiVitest,
 } from 'react-icons/si'
-import { FaJava, FaServer, FaShieldAlt, FaCode } from 'react-icons/fa'
+import { FaJava, FaDatabase } from 'react-icons/fa'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const Skills = () => {
@@ -35,14 +35,12 @@ const Skills = () => {
       key: 'languages',
       color: '#7c3aed',
       skills: [
-        { name: 'Python', icon: SiPython },
+        { name: 'TypeScript', icon: SiTypescript },
         { name: 'JavaScript', icon: SiJavascript },
-        { name: 'Java', icon: FaJava },
-        { name: 'C', icon: SiC },
-        { name: 'C++', icon: SiCplusplus },
-        { name: 'Ruby', icon: SiRuby },
+        { name: 'Python', icon: SiPython },
         { name: 'Dart', icon: SiDart },
-        { name: 'PHP', icon: SiPhp },
+        { name: 'Java', icon: FaJava },
+        { name: 'SQL', icon: FaDatabase },
       ],
     },
     {
@@ -50,8 +48,9 @@ const Skills = () => {
       color: '#06b6d4',
       skills: [
         { name: 'React', icon: SiReact },
-        { name: 'HTML5', icon: SiHtml5 },
-        { name: 'CSS3', icon: SiCss3 },
+        { name: 'Next.js', icon: SiNextdotjs },
+        { name: 'Tailwind CSS', icon: SiTailwindcss },
+        { name: 'Flutter', icon: SiFlutter },
       ],
     },
     {
@@ -60,18 +59,18 @@ const Skills = () => {
       skills: [
         { name: 'Node.js', icon: SiNodedotjs },
         { name: 'Express', icon: SiExpress },
-        { name: 'Flutter', icon: SiFlutter },
+        { name: 'Socket.IO', icon: SiSocketdotio },
         { name: 'Django', icon: SiDjango },
-        { name: 'Rails', icon: SiRubyonrails },
+        { name: 'Electron', icon: SiElectron },
       ],
     },
     {
       key: 'database',
       color: '#f59e0b',
       skills: [
-        { name: 'MySQL', icon: SiMysql },
-        { name: 'SQL Server', icon: FaServer },
         { name: 'PostgreSQL', icon: SiPostgresql },
+        { name: 'SQLite', icon: SiSqlite },
+        { name: 'Drizzle ORM', icon: SiDrizzle },
       ],
     },
     {
@@ -79,19 +78,12 @@ const Skills = () => {
       color: '#ef4444',
       skills: [
         { name: 'Git', icon: SiGit },
-        { name: 'GitHub', icon: SiGithub },
         { name: 'Docker', icon: SiDocker },
+        { name: 'GitHub Actions', icon: SiGithubactions },
+        { name: 'Vercel', icon: SiVercel },
+        { name: 'Railway', icon: SiRailway },
         { name: 'Linux', icon: SiLinux },
-        { name: 'Sheets', icon: SiGooglesheets },
-      ],
-    },
-    {
-      key: 'other',
-      color: '#8b5cf6',
-      skills: [
-        { name: 'Godot', icon: SiGodotengine },
-        { name: 'Seg. Info.', icon: FaShieldAlt },
-        { name: 'CTF / Hack', icon: FaCode },
+        { name: 'Vitest', icon: SiVitest },
       ],
     },
   ]

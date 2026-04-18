@@ -12,7 +12,6 @@ const About = () => {
           <p className="about-text" dangerouslySetInnerHTML={{ __html: t('about.p1') }} />
           <p className="about-text" dangerouslySetInnerHTML={{ __html: t('about.p2') }} />
           <p className="about-text" dangerouslySetInnerHTML={{ __html: t('about.p3') }} />
-          <p className="about-text" dangerouslySetInnerHTML={{ __html: t('about.p4') }} />
         </div>
       </div>
     </section>
