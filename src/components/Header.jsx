@@ -1,79 +1,65 @@
 import './Header.css'
 import { useEffect, useState } from 'react'
-import { FiSun, FiMoon, FiGlobe } from 'react-icons/fi'
 import { useLanguage } from '../contexts/LanguageContext'
 
-const Header = () => {
-  const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('theme')
-    return saved === 'dark' ? 'dark' : 'light'
-  })
-  const [scrolled, setScrolled] = useState(false)
-  const { language, toggleLanguage, t } = useLanguage()
+const Header = ({ activeSection }) => {
+    const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
+    const [scrolled, setScrolled] = useState(false)
+    const { language, toggleLanguage, t } = useLanguage()
 
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark')
-  }, [theme])
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme)
+        localStorage.setItem('theme', theme)
+    }, [theme])
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 20)
+        window.addEventListener('scroll', onScroll, { passive: true })
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [])
 
-  const toggleTheme = () => {
-    const next = theme === 'dark' ? 'light' : 'dark'
-    setTheme(next)
-    localStorage.setItem('theme', next)
-  }
+    const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
 
-  return (
-    <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
-      <div className="container">
-        <nav className="nav">
-          <a href="#" className="logo">
-            <span className="logo-name">Juliano</span>
-            <span className="logo-dot">.</span>
-          </a>
-          <ul className="nav-links">
-            <li>
-              <a href="#sobre">{t('nav.about')}</a>
-            </li>
-            <li>
-              <a href="#experiencia">{t('nav.experience')}</a>
-            </li>
-            <li>
-              <a href="#projetos">{t('nav.projects')}</a>
-            </li>
-            <li>
-              <a href="#certificacoes">{t('nav.certifications')}</a>
-            </li>
-            <li>
-              <a href="#habilidades">{t('nav.skills')}</a>
-            </li>
-          </ul>
-          <div className="header-controls">
-            <button
-              className="lang-toggle"
-              onClick={toggleLanguage}
-              aria-label={language === 'pt' ? 'Switch to English' : 'Mudar para Português'}
-              title={language === 'pt' ? 'English' : 'Português'}
-            >
-              <FiGlobe />
-              <span className="lang-label">{language.toUpperCase()}</span>
-            </button>
-            <button
-              className="theme-toggle"
-              onClick={toggleTheme}
-              aria-label={theme === 'dark' ? 'Alternar para modo claro' : 'Alternar para modo escuro'}
-            >
-              {theme === 'dark' ? <FiSun /> : <FiMoon />}
-            </button>
-          </div>
+    const links = [
+        { id: 'about', num: '01', label: t('nav.about') },
+        { id: 'work', num: '02', label: t('nav.work') },
+        { id: 'experience', num: '03', label: t('nav.experience') },
+        { id: 'skills', num: '04', label: t('nav.skills') },
+        { id: 'contact', num: '05', label: t('nav.contact') },
+    ]
+
+    return (
+        <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
+            <div className="wrap nav__inner">
+                <a href="#top" className="nav__brand">
+                    <span className="nav__brand-mark">JM</span>
+                    <span>
+                        Juliano<em style={{ fontStyle: 'italic', color: 'var(--terracotta)' }}>.</em>M
+                    </span>
+                </a>
+                <div className="nav__links">
+                    {links.map((l) => (
+                        <a
+                            key={l.id}
+                            href={`#${l.id}`}
+                            data-num={l.num}
+                            className={`nav__link ${activeSection === l.id ? 'active' : ''}`}
+                        >
+                            {l.label}
+                        </a>
+                    ))}
+                </div>
+                <div className="nav__tools">
+                    <button className="toggle" onClick={toggleLanguage} aria-label="Toggle language">
+                        {language.toUpperCase()}
+                    </button>
+                    <button className="toggle toggle--icon" onClick={toggleTheme} aria-label="Toggle theme">
+                        {theme === 'dark' ? '☀' : '☾'}
+                    </button>
+                </div>
+            </div>
         </nav>
-      </div>
-    </header>
-  )
+    )
 }
 
 export default Header

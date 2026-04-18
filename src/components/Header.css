@@ -1,172 +1,120 @@
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 1.1rem 0;
-  background: transparent;
-  transition: background 0.35s ease, backdrop-filter 0.35s ease, padding 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-.header--scrolled {
-  background: rgba(247, 246, 255, 0.85);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border-color);
-  padding: 0.7rem 0;
-  box-shadow: 0 4px 32px rgba(124, 58, 237, 0.06);
-}
-
-html.dark .header--scrolled {
-  background: rgba(7, 9, 15, 0.88);
-  border-bottom-color: rgba(255, 255, 255, 0.05);
-}
-
-/* ── Nav layout ── */
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: var(--s-4) 0;
+    background: color-mix(in oklab, var(--paper) 92%, transparent);
+    backdrop-filter: blur(12px) saturate(1.1);
+    -webkit-backdrop-filter: blur(12px) saturate(1.1);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--t-med) var(--ease), padding var(--t-med) var(--ease);
 }
-
-/* ── Logo ── */
-.logo {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 800;
-  display: flex;
-  align-items: baseline;
-  gap: 1px;
-  letter-spacing: -0.5px;
+.nav.scrolled {
+    border-bottom-color: var(--line);
+    padding: var(--s-3) 0;
 }
-
-.logo-name {
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.nav__inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--s-6);
 }
-
-.logo-dot {
-  color: var(--cyan);
-  -webkit-text-fill-color: var(--cyan);
-  font-size: 1.7rem;
-  line-height: 1;
+.nav__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
 }
-
-/* ── Nav links ── */
-.nav-links {
-  display: flex;
-  gap: 0.15rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.nav__brand-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: var(--terracotta);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--f-mono);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--paper);
+    z-index: 0;
 }
-
-.nav-links a {
-  position: relative;
-  color: var(--text-secondary);
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.88rem;
-  padding: 0.45rem 0.8rem;
-  border-radius: var(--radius-sm);
-  transition: color 0.2s ease, background 0.2s ease;
+.nav__brand-mark::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, color-mix(in oklab, var(--mustard) 80%, transparent) 0%, transparent 55%);
+    z-index: -1;
 }
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--gradient-brand);
-  border-radius: 1px;
-  transform: translateX(-50%);
-  transition: width 0.25s ease;
+.nav__links {
+    display: flex;
+    gap: var(--s-6);
+    justify-content: center;
+    align-items: center;
 }
-
-.nav-links a:hover {
-  color: var(--text-primary);
-  background: var(--violet-light);
+.nav__link {
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    position: relative;
+    padding: var(--s-2) 0;
+    transition: color var(--t-fast) var(--ease);
 }
-
-.nav-links a:hover::after {
-  width: calc(100% - 1.6rem);
+.nav__link::before {
+    content: attr(data-num);
+    color: var(--ink-mute);
+    margin-right: 6px;
+    font-size: 0.65rem;
 }
-
-/* ── Controls ── */
-.header-controls {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.nav__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: var(--terracotta);
+    transition: width var(--t-med) var(--ease);
 }
+.nav__link:hover { color: var(--ink); }
+.nav__link:hover::after,
+.nav__link.active::after { width: 100%; }
+.nav__link.active { color: var(--ink); }
 
-.lang-toggle,
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: var(--violet-light);
-  color: var(--violet);
-  border: 1px solid rgba(124, 58, 237, 0.2);
-  padding: 0.45rem 0.75rem;
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  font-family: var(--font-body);
-  font-weight: 600;
-  transition: all 0.2s ease;
+.nav__tools {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
 }
-
-.lang-toggle:hover,
-.theme-toggle:hover {
-  background: var(--violet);
-  color: white;
-  border-color: var(--violet);
-  box-shadow: var(--glow-sm);
+.toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 var(--s-3);
+    border: 1px solid var(--line);
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    transition: all var(--t-fast) var(--ease);
+    min-width: 36px;
+    gap: 4px;
 }
+.toggle:hover { border-color: var(--ink); color: var(--ink); }
+.toggle--icon { padding: 0; width: 36px; }
 
-html.dark .lang-toggle,
-html.dark .theme-toggle {
-  background: rgba(139, 92, 246, 0.1);
-  color: var(--violet);
-  border-color: rgba(139, 92, 246, 0.2);
-}
-
-html.dark .lang-toggle:hover,
-html.dark .theme-toggle:hover {
-  background: var(--violet);
-  color: white;
-  border-color: var(--violet);
-}
-
-.lang-toggle svg,
-.theme-toggle svg {
-  width: 15px;
-  height: 15px;
-}
-
-.lang-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-/* ── Responsive ── */
-@media (max-width: 900px) {
-  .nav-links a {
-    font-size: 0.82rem;
-    padding: 0.4rem 0.55rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .logo {
-    font-size: 1.15rem;
-  }
-
-  .nav-links {
-    display: none;
-  }
+@media (max-width: 880px) {
+    .nav__links { display: none; }
 }
