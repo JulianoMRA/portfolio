@@ -1,102 +1,63 @@
 # Portfólio — Juliano M. R. Alencar
 
-<p align="center">
-  <a href="https://portfolio-one-lake-ao6gfuy4lv.vercel.app/" target="_blank">🌐 Ver online</a> •
-  <a href="https://linkedin.com/in/julianomra">LinkedIn</a> •
-  <a href="https://github.com/JulianoMRA">GitHub</a>
-</p>
+No ar em [portfolio-one-lake-ao6gfuy4lv.vercel.app](https://portfolio-one-lake-ao6gfuy4lv.vercel.app/).
+Links pessoais: [LinkedIn](https://linkedin.com/in/julianomra) · [GitHub](https://github.com/JulianoMRA).
 
-Site pessoal desenvolvido em **React 19 + Vite**, com design "Neon Blueprint", suporte a **dark mode**, **internacionalização PT/EN** e deploy contínuo via Vercel.
+## Sobre o projeto
 
----
+É o meu site pessoal. Construí para ter um lugar próprio onde mostrar projetos, falar da formação e deixar contato acessível, sem depender de template de plataforma. Decidi manter o escopo pequeno: uma landing com seções de apresentação, experiência, projetos, certificações e habilidades. A ideia era conseguir iterar rápido no conteúdo à medida que a carreira evolui, sem precisar mexer em estrutura.
 
-## ✨ Features
+Hoje o site roda em PT e EN com troca ao vivo, modo claro/escuro persistente e deploy automático via Vercel.
 
-- **Hero** com animações CSS, blobs decorativos e anel rotativo na foto de perfil
-- **Seção Sobre** com resumo profissional focado em desenvolvimento fullstack
-- **Experiência** em timeline com cards animados (PET Computação, RSI, Ceos Jr.)
-- **Projetos** com galeria de imagens, modal acessível (Escape + teclado) e vídeos do YouTube — textos totalmente traduzíveis via i18n
-- **Certificações** com logos institucionais
-- **Habilidades** organizadas por categoria com ícones coloridos e efeito glow no hover
-- **Dark Mode** premium com glassmorphism — persistência em `localStorage`
-- **Internacionalização** PT/EN completa (inclusive projetos) com toggle no header
-- **Responsivo** para todos os tamanhos de tela
-- **ESLint + Prettier** configurados com scripts de lint e formatação
+## Stack e por que escolhi cada coisa
 
----
+- **React 19 + Vite 7.** Quis o ambiente de dev mais rápido possível para iterar em animações e ajustes finos de tipografia. Vite resolve isso sem configuração.
+- **i18n caseiro com Context API.** Não faz sentido instalar `react-i18next` para dois idiomas e umas centenas de strings. Todas as traduções vivem em `src/contexts/LanguageContext.jsx` num objeto único, acessadas por uma função `t('chave.aninhada')`. Se precisar adicionar um terceiro idioma, é só duplicar a árvore.
+- **CSS puro por componente.** Cada componente tem seu arquivo `.css`. Tokens globais de cor, espaçamento e tipografia ficam em `src/index.css` como CSS custom properties. Sem Tailwind e sem CSS-in-JS porque o projeto é pequeno e eu queria controle fino sobre animações e variáveis de tema.
 
-## 🛠️ Stack
+Outras dependências relevantes: `react-icons` (para os ícones das stacks na seção de habilidades) e `@vercel/analytics`.
 
-| Tecnologia | Uso |
-|---|---|
-| React 19 | Framework UI |
-| Vite 7 | Build tool e dev server |
-| react-icons | Ícones (Simple Icons, Font Awesome, Feather) |
-| CSS puro por componente | Estilos modulares com CSS custom properties |
-| Context API | Gerenciamento de idioma e traduções |
-| ESLint v9 + Prettier | Qualidade e formatação de código |
-| Vercel Analytics | Métricas de acesso |
-
-**Fontes:** Syne (títulos) · DM Sans (corpo) · JetBrains Mono (acentos técnicos)
-
----
-
-## 📁 Estrutura
+## Estrutura
 
 ```
 portfolio/
-├── public/
-│   ├── curriculo.pdf
-│   ├── foto-perfil.jpg
-│   ├── logos/
-│   └── projects/
+├── public/                     # curriculo.pdf, foto-perfil.jpg, logos e imagens dos projetos
 ├── src/
-│   ├── components/
-│   │   ├── Header.{jsx,css}       # Nav sticky com glassmorphism
-│   │   ├── Hero.{jsx,css}         # Landing com animações e blobs decorativos
-│   │   ├── About.{jsx,css}
-│   │   ├── Experience.{jsx,css}   # Timeline com slide-in animado
-│   │   ├── Projects.{jsx,css}     # Galeria, modal e vídeos
-│   │   ├── Certifications.{jsx,css}
-│   │   ├── Skills.{jsx,css}       # Grid com glow por categoria
-│   │   └── Footer.{jsx,css}
+│   ├── components/             # Hero, About, Experience, Projects, Certifications, Skills, Header, Footer
 │   ├── contexts/
-│   │   └── LanguageContext.jsx    # Traduções PT/EN centralizadas
-│   ├── App.{jsx,css}
-│   ├── index.css                  # Design tokens e keyframes globais
+│   │   └── LanguageContext.jsx # Traduções PT/EN centralizadas
+│   ├── App.jsx
+│   ├── index.css               # Tokens de design e keyframes globais
 │   └── main.jsx
 ├── eslint.config.js
 ├── .prettierrc
 └── vite.config.js
 ```
 
----
-
-## 🚀 Como Executar
+## Rodando localmente
 
 ```bash
-# Clonar repositório
 git clone https://github.com/JulianoMRA/portfolio.git
 cd portfolio
-
-# Instalar dependências
 npm install
-
-# Servidor de desenvolvimento
 npm run dev
 ```
 
-Acesse `http://localhost:5173`
+O dev server sobe em `http://localhost:5173`.
 
----
+## Scripts
 
-## 🧹 Scripts
-
-| Comando | Descrição |
+| Comando | O que faz |
 |---|---|
-| `npm run dev` | Servidor de desenvolvimento |
-| `npm run build` | Build de produção |
-| `npm run preview` | Preview do build local |
-| `npm run lint` | Verificar erros com ESLint |
-| `npm run lint:fix` | Corrigir erros automaticamente |
-| `npm run format` | Formatar código com Prettier |
+| `npm run dev` | Dev server com HMR |
+| `npm run build` | Build de produção em `dist/` |
+| `npm run preview` | Serve o build local para checar antes de publicar |
+| `npm run lint` | ESLint sobre `src/` |
+| `npm run lint:fix` | ESLint com correção automática |
+| `npm run format` | Prettier em `src/` |
+
+## Notas
+
+- **Editar conteúdo.** Todo o texto exibido no site (headline, experiências, descrições de projetos, rótulos de botão) vive em `src/contexts/LanguageContext.jsx`. Cada chave aparece em `pt` e `en`. Alterações em um idioma precisam ter contrapartida no outro, senão a função `t()` devolve a própria chave.
+- **Adicionar um projeto.** Dados estáticos (links, tags, imagens) ficam em `src/components/Projects.jsx`, no array `projectsStatic`. Os textos (título, período, contexto, detalhes) entram em `projects.items.<chave>` do arquivo de traduções, nos dois idiomas.
+- **Deploy.** Push na `main` dispara deploy automático na Vercel. A preview URL de cada PR também fica disponível.
