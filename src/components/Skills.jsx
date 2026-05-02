@@ -21,7 +21,7 @@ const Skills = () => {
 
                 <div className="skills__grid">
                     {SKILLS.map((s, i) => (
-                        <div key={s.group} className="skills__group">
+                        <div key={s.group} className={`skills__group${s.group === 'learning' ? ' skills__group--learning' : ''}`}>
                             <div className="skills__group-label">
                                 <span className="skills__group-num">{String(i + 1).padStart(2, '0')}</span>
                                 {t(`skills.groups.${s.group}`)}

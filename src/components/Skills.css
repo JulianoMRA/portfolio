@@ -63,6 +63,9 @@
     transform: translateY(-2px);
 }
 @media (max-width: 720px) { .skills__grid { grid-template-columns: 1fr; } }
+.skills__group--learning { opacity: 0.72; }
+.skills__group--learning .skills__item { border-style: dashed; }
+.skills__group--learning .skills__item:hover { opacity: 1; }
 
 .certs { padding-bottom: var(--s-9); margin-top: var(--s-7); }
 .certs__list {
