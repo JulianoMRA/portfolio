@@ -33,9 +33,7 @@ const Header = ({ activeSection }) => {
             <div className="wrap nav__inner">
                 <a href="#top" className="nav__brand">
                     <span className="nav__brand-mark">JM</span>
-                    <span>
-                        Juliano<em style={{ fontStyle: 'italic', color: 'var(--terracotta)' }}>.</em>M
-                    </span>
+                    <span>Juliano.M</span>
                 </a>
                 <div className="nav__links">
                     {links.map((l) => (

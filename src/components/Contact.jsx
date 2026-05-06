@@ -24,24 +24,13 @@ const Contact = () => {
     return (
         <section id="contact" className="contact">
             <div className="wrap">
-                <header
-                    className="sec-head reveal"
-                    ref={ref}
-                    style={{ borderBottom: '1px solid color-mix(in oklab, var(--paper) 20%, transparent)' }}
-                >
+                <header className="sec-head contact__head reveal" ref={ref}>
+                    <span className="sec-head__num">05 / 05</span>
                     <div>
-                        <span
-                            className="kicker"
-                            style={{ color: 'color-mix(in oklab, var(--paper) 65%, transparent)' }}
-                        >
-                            {t('contact.kicker')}
-                        </span>
+                        <span className="kicker contact__kicker">{t('contact.kicker')}</span>
                     </div>
-                    <span
-                        className="sec-head__num"
-                        style={{ color: 'color-mix(in oklab, var(--paper) 55%, transparent)' }}
-                    >
-                        05 / 05
+                    <span className="sec-head__meta">
+                        <span className="pill pill--pass"><span className="pill__dot" />online</span>
                     </span>
                 </header>
 
@@ -65,7 +54,7 @@ const Contact = () => {
                         </div>
                     </div>
                     <div className="contact__social">
-                        <span className="contact__social-label">◦ {t('contact.social')}</span>
+                        <span className="contact__social-label">{'// '}{t('contact.social')}</span>
                         <a
                             href="https://linkedin.com/in/julianomra"
                             target="_blank"

@@ -24,6 +24,10 @@ export default [
         document: 'readonly',
         localStorage: 'readonly',
         console: 'readonly',
+        navigator: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        IntersectionObserver: 'readonly',
       },
     },
     settings: {

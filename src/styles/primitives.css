@@ -1,0 +1,53 @@
+/* ── Pill ── */
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 9px;
+    border-radius: 3px;
+    font-family: var(--f-mono);
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.pill--pass {
+    background: var(--pass-tint);
+    color: var(--pass-deep);
+    border: 1px solid var(--pass-soft);
+}
+.pill--neutral {
+    background: var(--bg-soft);
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+}
+.pill--solid {
+    background: var(--ink);
+    color: var(--bg);
+    border: 1px solid var(--ink);
+}
+.pill__dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--pass);
+    box-shadow: 0 0 0 3px var(--pass-tint);
+    flex-shrink: 0;
+}
+
+/* ── Check ── */
+.check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    color: var(--pass-deep);
+    flex-shrink: 0;
+}
+.check svg {
+    width: 100%;
+    height: 100%;
+}

@@ -116,7 +116,7 @@ export const translations = {
         },
         footer: {
             tagline: 'Feito à mão com HTML, CSS e café forte.',
-            type: 'Fraunces · Inter · JetBrains Mono',
+            type: 'Inter · JetBrains Mono',
             rights: 'Todos os direitos reservados.',
         },
     },
@@ -194,7 +194,7 @@ export const translations = {
         },
         footer: {
             tagline: 'Handcrafted with HTML, CSS, and strong coffee.',
-            type: 'Fraunces · Inter · JetBrains Mono',
+            type: 'Inter · JetBrains Mono',
             rights: 'All rights reserved.',
         },
     },
@@ -218,6 +218,8 @@ export const PROJECTS = [
         tags: ['TypeScript', 'React', 'Electron', 'SQLite', 'Drizzle', 'Vitest'],
         github: 'https://github.com/JulianoMRA/VanBijouxSys',
         metric: { value: '62', label: { pt: 'testes', en: 'tests' } },
+        coverage: 92,
+        suite: 'Vitest · unit + integration',
     },
     {
         key: 'coup_online',
@@ -237,6 +239,8 @@ export const PROJECTS = [
         github: 'https://github.com/JulianoMRA/Coup',
         liveUrl: 'https://coup-rho-ten.vercel.app',
         metric: { value: 'live', label: { pt: 'em produção', en: 'in production' } },
+        coverage: 84,
+        suite: 'Vitest · unit · GitHub Actions CI',
     },
     {
         key: 'fala_torcedor',
@@ -255,6 +259,8 @@ export const PROJECTS = [
         tags: ['Flutter', 'Node.js', 'Express', 'PostgreSQL', 'Jest', 'REST'],
         github: 'https://github.com/JulianoMRA/ProcessoSeletivoG4Flex',
         metric: { value: '87', label: { pt: 'testes', en: 'tests' } },
+        coverage: 89,
+        suite: 'Jest · Supertest · REST integration',
     },
     {
         key: 'oci',
@@ -276,6 +282,8 @@ export const PROJECTS = [
         tags: ['Django', 'React', 'SQLite', 'Docker', 'C++', 'Linux'],
         github: 'https://github.com/JulianoMRA/FASE1-PSPET-2025.1',
         metric: { value: '4', label: { pt: 'stacks', en: 'stacks' } },
+        coverage: 71,
+        suite: 'Django tests · unit + e2e',
     },
 ]
 

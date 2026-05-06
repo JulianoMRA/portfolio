@@ -1,6 +1,7 @@
 import './Experience.css'
 import { useLanguage, EXPERIENCES } from '../contexts/LanguageContext'
 import { useReveal } from '../hooks/useReveal'
+import { Check } from './Check'
 
 const Experience = () => {
     const { t, language } = useLanguage()
@@ -10,11 +11,11 @@ const Experience = () => {
         <section id="experience" className="exp">
             <div className="wrap">
                 <header className="sec-head reveal" ref={headRef}>
+                    <span className="sec-head__num">03 / 05</span>
                     <div>
                         <span className="kicker">{t('experience.kicker')}</span>
                         <h2 className="sec-head__title">{t('experience.title')}</h2>
                     </div>
-                    <span className="sec-head__num">03 / 05</span>
                 </header>
 
                 <div className="exp__list">
@@ -41,7 +42,7 @@ const ExpItem = ({ exp, lang }) => {
                 <ul className="exp__highlights">
                     {exp.highlights[lang].map((h, i) => (
                         <li key={i} className="exp__highlight">
-                            <span />
+                            <Check />
                             <span>{h}</span>
                         </li>
                     ))}

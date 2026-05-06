@@ -1,13 +1,14 @@
 import './Hero.css'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useReveal } from '../hooks/useReveal'
+import TestRunner from './TestRunner'
 
 const Hero = () => {
     const { t, language } = useLanguage()
     const ref = useReveal({ threshold: 0.05 })
 
     return (
-        <section id="top" className="hero reveal" ref={ref}>
+        <section id="top" className="hero" ref={ref}>
             <div className="hero__marquee" aria-hidden="true">
                 <div className="hero__marquee-track">
                     Juliano Melo &nbsp;·&nbsp; Juliano Melo &nbsp;·&nbsp; Juliano Melo &nbsp;·&nbsp;
@@ -15,33 +16,41 @@ const Hero = () => {
                 </div>
             </div>
             <div className="wrap">
-                <div className="hero__meta">
-                    <div className="hero__meta-item">
-                        <span className="hero__meta-label">◦ {language === 'pt' ? 'Status' : 'Status'}</span>
-                        <span className="hero__meta-value">
-                            <span className="hero__meta-dot" />
-                            {t('meta.availability')}
-                        </span>
+                <div className="hero__status">
+                    <div className="hero__meta">
+                        <div className="hero__meta-item">
+                            <span className="hero__meta-label">{'// '}{language === 'pt' ? 'Status' : 'Status'}</span>
+                            <span className="hero__meta-value">
+                                <span className="hero__meta-dot" />
+                                {t('meta.availability')}
+                            </span>
+                        </div>
+                        <div className="hero__meta-item">
+                            <span className="hero__meta-label">{'// '}{language === 'pt' ? 'Local' : 'Location'}</span>
+                            <span className="hero__meta-value">{t('meta.location')}</span>
+                        </div>
+                        <div className="hero__meta-item">
+                            <span className="hero__meta-label">{'// '}{language === 'pt' ? 'Função' : 'Role'}</span>
+                            <span className="hero__meta-value">{t('meta.role')}</span>
+                        </div>
                     </div>
-                    <div className="hero__meta-item">
-                        <span className="hero__meta-label">◦ {language === 'pt' ? 'Local' : 'Location'}</span>
-                        <span className="hero__meta-value">{t('meta.location')}</span>
-                    </div>
-                    <div className="hero__meta-item">
-                        <span className="hero__meta-label">◦ {language === 'pt' ? 'Função' : 'Role'}</span>
-                        <span className="hero__meta-value">{t('meta.role')}</span>
+                    <div className="hero__build" title="build status">
+                        <span>build</span>
+                        <span>passing</span>
                     </div>
                 </div>
 
-                <h1 className="hero__title">
-                    <span className="line">{t('hero.title_a')}</span>
-                    <span className="line indent">
-                        <em>{t('hero.title_b')}</em>
-                        <span className="asterisk">❋</span>
-                    </span>
-                    <span className="line">{t('hero.title_c')}</span>
-                    <span className="line indent">{t('hero.title_d')}</span>
-                </h1>
+                <div className="hero__grid">
+                    <h1 className="hero__title">
+                        <span className="line">{t('hero.title_a')}</span>
+                        <span className="line indent">
+                            <em>{t('hero.title_b')}</em>
+                        </span>
+                        <span className="line">{t('hero.title_c')}</span>
+                        <span className="line indent">{t('hero.title_d')}</span>
+                    </h1>
+                    <TestRunner />
+                </div>
 
                 <div className="hero__bottom">
                     <p className="hero__lede">{t('hero.lede')}</p>
