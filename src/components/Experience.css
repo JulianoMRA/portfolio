@@ -59,6 +59,14 @@
     color: var(--ink-soft);
     align-items: start;
 }
+.exp__tags {
+    list-style: none;
+    padding: 0;
+    margin: var(--s-3) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+}
 @media (max-width: 720px) {
     .exp__item { grid-template-columns: 1fr; gap: var(--s-3); }
 }

@@ -54,7 +54,7 @@ export const translations = {
             title_b: 'software',
             title_c: 'com cuidado',
             title_d: 'e intenção.',
-            lede: 'Estudante de Ciência da Computação na UFC com base sólida em desenvolvimento fullstack (TypeScript, React, Node.js). Foco em automação de testes, CI/CD e garantia de qualidade.',
+            lede: 'QA Engineer no LSBD/UFC, atuando em projetos industriais de diagnóstico de hardware para a Lenovo (LDAR e LTAD). Base sólida em desenvolvimento fullstack (TypeScript, React, Node.js) com foco em automação de testes, CI/CD e garantia de qualidade.',
             cta_work: 'Ver projetos',
             cta_cv: 'Baixar CV',
             scroll: 'Role para explorar',
@@ -63,10 +63,10 @@ export const translations = {
             kicker: 'Sobre',
             title: 'Um dev que pensa como QA.',
             label: 'Apresentação',
-            p1_bold: 'QA & Test Automation Engineer',
-            p1: ' com base prática em desenvolvimento fullstack. Penso como dev (leio o código, entendo a arquitetura) e atuo como QA (modelo casos de teste, monto pipelines, busco regressões antes do usuário). No VanBijouxSys, ERP desktop em produção, implementei 62 testes automatizados (unitários + integração) em Vitest cobrindo fórmula de precificação, dedução de insumos e restauração transacional de estoque. No Coup Online, montei pipeline CI/CD no GitHub Actions com lint, testes e secretlint a cada push, com deploy contínuo para Vercel + Railway.',
-            p2: 'Estou no 5º semestre de Ciência da Computação na UFC. Como bolsista do PET Computação, coordeno o Processo Seletivo 2026 do programa — definindo rubricas e critérios de avaliação para um comitê de ~10 membros, exercício prático de qualidade aplicada a processos. Também ajudei a organizar a Olimpíada Cearense de Informática (736 participantes, 20 escolas) e a Semana Acadêmica da Computação.',
-            p3: 'Busco meu primeiro estágio em QA ou automação de testes. Disponível presencial em Fortaleza ou remoto. Estudando Playwright, pytest e ISTQB CTFL como próximos passos.',
+            p1_bold: 'QA Engineer no LSBD/UFC',
+            p1: ', em projetos industriais de diagnóstico de hardware para a Lenovo (LDAR e LTAD). Venho de uma base prática em desenvolvimento fullstack: penso como dev (leio o código, entendo a arquitetura) e atuo como QA (modelo casos de teste, monto pipelines, busco regressões antes do usuário).',
+            p2: 'Antes do LSBD, construí prática real em projetos próprios: implementei 62 testes automatizados (unitários + integração) em Vitest no VanBijouxSys, ERP desktop em produção — cobrindo fórmula de precificação, dedução de insumos e restauração transacional de estoque. No Coup Online, montei pipeline CI/CD no GitHub Actions com lint, testes e secretlint a cada push, com deploy contínuo para Vercel + Railway.',
+            p3: 'Estou no 5º semestre de Ciência da Computação na UFC. Em estudo agora: Playwright (E2E web), pytest, Postman/RestAssured, ISTQB CTFL.',
             facts: {
                 projects: 'Projetos em produção',
                 tests: 'Testes automatizados',
@@ -77,7 +77,7 @@ export const translations = {
         work: {
             kicker: 'Projetos selecionados',
             title: 'Trabalhos recentes.',
-            subtitle: 'Quatro projetos com foco em arquitetura, testes automatizados e CI/CD — da web ao desktop.',
+            subtitle: 'Projetos pessoais construídos em paralelo aos estudos e à atuação profissional — foco em arquitetura, testes automatizados e CI/CD.',
             view: 'Ver no GitHub',
             play: 'Jogar ao vivo',
         },
@@ -132,7 +132,7 @@ export const translations = {
             title_b: 'software',
             title_c: 'with care',
             title_d: 'and intent.',
-            lede: 'Computer Science student at UFC with a solid fullstack background (TypeScript, React, Node.js). Focused on test automation, CI/CD, and quality assurance.',
+            lede: 'QA Engineer at LSBD/UFC, working on industrial hardware diagnostics projects for Lenovo (LDAR and LTAD). Solid fullstack background (TypeScript, React, Node.js) with focus on test automation, CI/CD, and quality assurance.',
             cta_work: 'View work',
             cta_cv: 'Download CV',
             scroll: 'Scroll to explore',
@@ -141,10 +141,10 @@ export const translations = {
             kicker: 'About',
             title: 'A dev who thinks like QA.',
             label: 'Introduction',
-            p1_bold: 'QA & Test Automation Engineer',
-            p1: ' with a hands-on fullstack background. I think like a dev (I read the code, understand the architecture) and act like a QA (modeling test cases, building pipelines, catching regressions before the user does). On VanBijouxSys, a desktop ERP in production, I implemented 62 automated tests (unit + integration) in Vitest covering pricing formulas, inventory deduction, and transactional stock recovery. On Coup Online, I set up a CI/CD pipeline on GitHub Actions running lint, tests, and secretlint on every push, with continuous deployment to Vercel + Railway.',
-            p2: "I'm in my 5th semester of Computer Science at UFC. As a scholarship member of PET Computação, I coordinate the program's 2026 selection process — defining rubrics and evaluation criteria for a ~10-member committee, a hands-on exercise in quality applied to processes. I also helped organize the Ceará Informatics Olympiad (736 participants, 20 schools) and the Computing Academic Week.",
-            p3: 'Looking for my first QA or test automation internship. Available in-person in Fortaleza or remote. Studying Playwright, pytest, and ISTQB CTFL as next steps.',
+            p1_bold: 'QA Engineer at LSBD/UFC',
+            p1: ', on industrial hardware diagnostics projects for Lenovo (LDAR and LTAD). I come from a hands-on fullstack background: I think like a dev (I read the code, understand the architecture) and act like a QA (modeling test cases, building pipelines, catching regressions before the user does).',
+            p2: 'Before LSBD, I built real practice in personal projects: I implemented 62 automated tests (unit + integration) in Vitest on VanBijouxSys, a desktop ERP in production — covering pricing formulas, inventory deduction, and transactional stock recovery. On Coup Online, I set up a CI/CD pipeline on GitHub Actions running lint, tests, and secretlint on every push, with continuous deployment to Vercel + Railway.',
+            p3: "I'm in my 5th semester of Computer Science at UFC. Currently learning: Playwright (E2E web), pytest, Postman/RestAssured, ISTQB CTFL.",
             facts: {
                 projects: 'Projects in production',
                 tests: 'Automated tests',
@@ -155,7 +155,7 @@ export const translations = {
         work: {
             kicker: 'Selected work',
             title: 'Recent projects.',
-            subtitle: 'Four projects focused on architecture, automated testing, and CI/CD — from web to desktop.',
+            subtitle: 'Personal projects built alongside studies and professional work — focused on architecture, automated testing, and CI/CD.',
             view: 'View on GitHub',
             play: 'Play live',
         },
@@ -289,47 +289,67 @@ export const PROJECTS = [
 
 export const EXPERIENCES = [
     {
-        key: 'pet',
-        title: { pt: 'PET Computação', en: 'PET Computing' },
-        role: { pt: 'Bolsista Remunerado', en: 'Paid Fellow' },
-        period: { pt: 'Jul 2025 — Presente', en: 'Jul 2025 — Present' },
+        key: 'lsbd',
+        title: { pt: 'LSBD – Laboratório de Sistemas e Bancos de Dados', en: 'LSBD – Laboratory of Systems and Databases' },
+        role: { pt: 'QA Engineer (Bolsista)', en: 'QA Engineer (Scholarship)' },
+        period: { pt: 'Mai 2026 — Presente', en: 'May 2026 — Present' },
         location: 'Fortaleza, CE',
         highlights: {
             pt: [
-                'Coordeno o Processo Seletivo 2026 do programa, liderando comitê de ~10 membros na definição de cronograma, edital e rubricas de avaliação.',
-                'Coordenei o INCLUDE 2026, evento de acolhimento para 60–70 calouros de Ciência da Computação.',
-                'Co-organizei a Olimpíada Cearense de Informática (736 participantes, 20 escolas) e a Semana Acadêmica da Computação (~200 participantes), incluindo elaboração de problemas de programação.',
+                'Atuação em testes de software no LSBD, laboratório de pesquisa aplicada da UFC, nos projetos LDAR (Lenovo Diagnostics for ARM) e LTAD (Lenovo ThinkSmart Office Diagnostics) — ferramentas de diagnóstico de hardware desenvolvidas para a Lenovo.',
             ],
             en: [
-                "Coordinate the program's 2026 selection process, leading a ~10-member committee on schedule, guidelines, and evaluation rubrics.",
-                'Coordinated INCLUDE 2026, an onboarding event for 60–70 Computer Science freshmen.',
-                'Co-organized the Ceará Informatics Olympiad (736 participants, 20 schools) and the Computing Academic Week (~200 participants), including designing programming problems.',
+                'Software testing at LSBD, an applied research lab at UFC, on the LDAR (Lenovo Diagnostics for ARM) and LTAD (Lenovo ThinkSmart Office Diagnostics) projects — hardware diagnostics tools developed for Lenovo.',
             ],
+        },
+        tags: ['QA', 'Test Automation', 'Jira', 'Bug Reporting', 'Hardware Testing'],
+    },
+    {
+        key: 'pet',
+        title: { pt: 'PET Computação UFC', en: 'PET Computing UFC' },
+        role: { pt: 'Bolsista Remunerado', en: 'Paid Scholarship' },
+        period: { pt: 'Jul 2025 — Mai 2026', en: 'Jul 2025 — May 2026' },
+        location: 'Fortaleza, CE',
+        highlights: {
+            pt: [
+                'Coordenei o planejamento estratégico do Processo Seletivo 2026, liderando comitê de ~10 membros na definição de cronograma, edital e rubricas de avaliação.',
+                'Co-organizei a Olimpíada Cearense de Informática (736 participantes, 20 escolas) e a Semana Acadêmica da Computação.',
+            ],
+            en: [
+                'Led the strategic planning of the 2026 selection process, coordinating a committee of ~10 members on schedule, regulations, and evaluation rubrics.',
+                'Co-organized the Ceará Informatics Olympics (736 participants, 20 schools) and the Computer Science Academic Week.',
+            ],
+        },
+        tags: {
+            pt: ['Liderança', 'Coordenação', 'Planejamento', 'Critérios de Qualidade'],
+            en: ['Leadership', 'Coordination', 'Planning', 'Quality Criteria'],
         },
     },
     {
         key: 'ceos',
-        title: { pt: 'Ceos Jr. — Empresa Júnior', en: 'Ceos Jr. — Junior Enterprise' },
-        role: { pt: 'Assessor Comercial', en: 'Commercial Advisor' },
+        title: { pt: 'Ceos Jr — Empresa Júnior da Computação UFC', en: 'Ceos Jr — UFC Computing Junior Enterprise' },
+        role: { pt: 'Assessor Comercial', en: 'Sales Associate' },
         period: { pt: 'Mai 2024 — Mai 2025', en: 'May 2024 — May 2025' },
         location: 'Fortaleza, CE',
         highlights: {
             pt: [
-                'Conduzi o ciclo completo de vendas de serviços de tecnologia (prospecção, diagnóstico, proposta e fechamento), fechando 2 contratos no período.',
-                'Construí dashboards e relatórios mensais de desempenho da equipe comercial, reduzindo o tempo manual de consolidação de dados.',
-                'Gerenciei demandas com Scrum/Kanban em contato direto com times técnicos e parceiros externos.',
+                'Conduzi o ciclo completo de vendas de serviços de tecnologia (prospecção, proposta e fechamento), fechando 2 contratos no período.',
+                'Construí dashboards e relatórios mensais de desempenho da equipe comercial.',
             ],
             en: [
-                'Led the full sales cycle of technology services (prospecting, discovery, proposal, and closing), closing 2 contracts in the period.',
-                "Built monthly dashboards and reports on the commercial team's performance, reducing manual data consolidation time.",
-                'Managed demands with Scrum/Kanban in direct contact with technical teams and external partners.',
+                'Led the full sales cycle for technology services (prospecting, proposals, and closing), securing 2 contracts during the period.',
+                'Built monthly dashboards and reports for sales team performance.',
             ],
+        },
+        tags: {
+            pt: ['Vendas', 'Scrum/Kanban', 'Dashboards', 'Comunicação'],
+            en: ['Sales', 'Scrum/Kanban', 'Dashboards', 'Communication'],
         },
     },
 ]
 
 export const SKILLS = [
-    { group: 'qa',        items: ['Vitest', 'GitHub Actions', 'Git', 'Docker'] },
+    { group: 'qa',        items: ['Vitest', 'GitHub Actions', 'Jira', 'Bug Reporting', 'Test Case Design', 'Git', 'Docker'] },
     { group: 'languages', items: ['TypeScript', 'JavaScript', 'Python', 'Java', 'SQL'] },
     { group: 'apis',      items: ['REST', 'PostgreSQL', 'SQLite', 'Drizzle ORM'] },
     { group: 'frontend',  items: ['React', 'Next.js', 'Tailwind CSS', 'Flutter'] },

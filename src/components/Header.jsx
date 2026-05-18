@@ -22,8 +22,8 @@ const Header = ({ activeSection }) => {
 
     const links = [
         { id: 'about', num: '01', label: t('nav.about') },
-        { id: 'work', num: '02', label: t('nav.work') },
-        { id: 'experience', num: '03', label: t('nav.experience') },
+        { id: 'experience', num: '02', label: t('nav.experience') },
+        { id: 'work', num: '03', label: t('nav.work') },
         { id: 'skills', num: '04', label: t('nav.skills') },
         { id: 'contact', num: '05', label: t('nav.contact') },
     ]

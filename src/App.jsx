@@ -35,8 +35,8 @@ function App() {
             <Header activeSection={activeSection} />
             <Hero />
             <About />
-            <Projects />
             <Experience />
+            <Projects />
             <Skills />
             <Contact />
             <Footer />

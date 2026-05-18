@@ -11,7 +11,7 @@ const Experience = () => {
         <section id="experience" className="exp">
             <div className="wrap">
                 <header className="sec-head reveal" ref={headRef}>
-                    <span className="sec-head__num">03 / 05</span>
+                    <span className="sec-head__num">02 / 05</span>
                     <div>
                         <span className="kicker">{t('experience.kicker')}</span>
                         <h2 className="sec-head__title">{t('experience.title')}</h2>
@@ -47,6 +47,13 @@ const ExpItem = ({ exp, lang }) => {
                         </li>
                     ))}
                 </ul>
+                {exp.tags && (
+                    <ul className="exp__tags">
+                        {(Array.isArray(exp.tags) ? exp.tags : exp.tags[lang]).map((tag) => (
+                            <li key={tag} className="pill pill--neutral">{tag}</li>
+                        ))}
+                    </ul>
+                )}
             </div>
         </article>
     )

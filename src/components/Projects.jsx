@@ -13,7 +13,7 @@ const Projects = () => {
         <section id="work" className="work">
             <div className="wrap">
                 <header className="sec-head reveal" ref={headRef}>
-                    <span className="sec-head__num">02 / 05</span>
+                    <span className="sec-head__num">03 / 05</span>
                     <div>
                         <span className="kicker">{t('work.kicker')}</span>
                         <h2 className="sec-head__title">{t('work.title')}</h2>
